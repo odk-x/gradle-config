@@ -1,0 +1,127 @@
+/**************************************************************************************************
+                                        GRADLE CONFIG
+ *************************************************************************************************/
+ 
+ apply plugin: 'jacoco'  // Can't (yet) use integrated Android JaCoCo for UnitTests,
+                         // see: https://code.google.com/p/android/issues/detail?id=144664
+                       
+/**************************************************************************************************
+                                        VERSION CODES
+ *************************************************************************************************/
+
+ext.group = 'org.opendatakit'
+
+ext.versionCodeName = '2.0'
+ext.releaseVersionCode = 127
+
+ext.compileVersion = 19
+ext.minVersion = 16
+ext.targetVersion = 16
+
+ext.buildTools = "22.0.1"
+
+ext.testCoverage = true // toggles AndroidTest JaCoCo reports
+ext.minify = false // toggles minify for the release build
+
+ext.packageList = ['META-INF/LICENSE','META-INF/LICENSE.txt','META-INF/NOTICE','META-INF/NOTICE.txt']
+
+/**************************************************************************************************
+                                        GLOBAL VARIABLES
+ *************************************************************************************************/
+
+ 
+/**************************************************************************************************
+                                        CUSTOM METHODS
+ *************************************************************************************************/
+
+// Check which test suites have been implemented
+def listTests() {
+    def availiableTests = []
+    
+    def testFolder = new File("${buildDir.parent}/src/test")
+    if (testFolder.exists()) {
+        availiableTests.add("testDebug")
+    }
+    
+    def androidTestFolder = new File("${buildDir.parent}/src/androidTest")
+    if (androidTestFolder.exists()) {
+        availiableTests.add("connectedAndroidTestDebug")
+    }
+   
+    return availiableTests
+ }
+ 
+ def listTestFiles() {
+    
+    def testFiles = []
+    def testList = listTests()
+  
+    if (testList.contains("testDebug")) {
+        testFiles.add("${buildDir}/jacoco/testDebug.exec")
+    }
+    
+    if (testList.contains("connectedAndroidTestDebug")) {
+        availiableTests.add("${buildDir}/outputs/code-coverage/connected/coverage.ec")
+    }
+   
+    return testFiles
+ }
+ 
+/**************************************************************************************************
+                                        CUSTOM TASKS
+ *************************************************************************************************/
+ 
+// Code to merge JaCoCo .exec/.ec files
+// Outputs to ${buildDir}/jacoco/TASK_NAME.exec
+task jacocoMergeGen(type: JacocoMerge, dependsOn: listTests()) {
+    description = "Merge test code coverage results from all different test types"
+
+    executionData = files(listTestFiles())
+}
+ 
+// Code to generate JaCoCo reports
+task jacocoTestDebugReport(type:JacocoReport, dependsOn: ["jacocoMergeGen"]) {
+    group = "Reporting"
+    description = "Generate a JaCoCo code-coverage report for debug tests"
+
+    classDirectories = fileTree( // Include relevant .class files
+            dir: "${buildDir}/intermediates/classes/debug",
+            excludes: ['**/R.class',
+                       '**/R$*.class',
+                       '**/*$ViewInjector*.*',
+                       '**/BuildConfig.*',
+                       '**/Manifest*.*']
+    )
+
+    sourceDirectories = files("${buildDir.parent}/src/main/java") // Set src directories
+    additionalSourceDirs = files([
+            "${buildDir}/generated/source/buildConfig/debug",
+            "${buildDir}/generated/source/r/debug"
+    ])
+
+    // Generate report from merged .exec file
+    executionData = files("${buildDir}/jacoco/jacocoMergeGen.exec")
+
+    reports { // Report output config
+        xml {
+            enabled = true
+            destination "${project.buildDir}/reports/jacoco/jacoco.xml"
+        }
+        html {
+            enabled = true
+            destination "${project.buildDir}/reports/jacoco"
+        }
+    }
+}
+
+// Define the snapshot version to be the git hash
+task generateSnapshotVersion {
+    def gitHash = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'rev-parse', '--short', 'HEAD'
+        standardOutput = gitHash
+    }
+    doLast {
+        project.ext.snapshotVersionCode = gitHash.toString().trim()
+    }
+}
