@@ -7,5 +7,6 @@
  def runnablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/master/runnables.gradle'
  
  ext.settingsScripts = [variablesURL]
+ ext.toplevelScripts = [variablesURL]
  ext.libraryScripts = [pluginsURL,variablesURL,runnablesURL]
  ext.applicationScripts = [pluginsURL,variablesURL,runnablesURL]

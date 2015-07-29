@@ -15,6 +15,8 @@ ext.commonSnapshot = '528b1d0'
 
 ext.buildTools = "22.0.1"
 
+ext.gradleClasspath = 'com.android.tools.build:gradle:1.2.3'
+
 /**************************************************************************************************
                                         GLOBAL VARIABLES
  *************************************************************************************************/
@@ -26,7 +28,14 @@ ext.packageList =   ['META-INF/LICENSE',
                     'META-INF/LICENSE.txt',
                     'META-INF/NOTICE',
                     'META-INF/NOTICE.txt']
+                    
+ext.mavenURLList =  ['http://cwe.cs.washington.edu:8082/artifactory/libs-release',
+                    'http://cwe.cs.washington.edu:8082/artifactory/libs-snapshot']
+
 
 ext.libraryProjectPath = new File("../androidlibrary/androidlibrary_lib")
+ext.libraryProjectName = ':androidlibrary:androidlibrary_lib'
+
 ext.commonProjectPath = new File("../androidcommon/androidcommon_lib")
+ext.commonProjectName = ':androidcommon:androidcommon_lib'
                     
