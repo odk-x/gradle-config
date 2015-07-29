@@ -69,7 +69,7 @@ def listTests() {
     }
     
     if (testList.contains("connectedAndroidTestDebug")) {
-        availiableTests.add("${buildDir}/outputs/code-coverage/connected/coverage.ec")
+        testFiles.add("${buildDir}/outputs/code-coverage/connected/coverage.ec")
     }
    
     return testFiles
