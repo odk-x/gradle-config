@@ -10,13 +10,15 @@
  *************************************************************************************************/
 
 ext.group = 'org.opendatakit'
-
 ext.versionCodeName = '2.0'
 ext.releaseVersionCode = 127
 
 ext.compileVersion = 19
 ext.minVersion = 16
 ext.targetVersion = 16
+
+ext.librarySnapshot = 'becb87a'
+ext.commonSnapshot = '528b1d0'
 
 ext.buildTools = "22.0.1"
 
@@ -36,14 +38,15 @@ ext.packageList = ['META-INF/LICENSE','META-INF/LICENSE.txt','META-INF/NOTICE','
 
 // Check which test suites have been implemented
 def listTests() {
-    def availiableTests = []
     
+    def availiableTests = []
     def testFolder = new File("${buildDir.parent}/src/test")
+    def androidTestFolder = new File("${buildDir.parent}/src/androidTest")
+        
     if (testFolder.exists()) {
         availiableTests.add("testDebug")
     }
     
-    def androidTestFolder = new File("${buildDir.parent}/src/androidTest")
     if (androidTestFolder.exists()) {
         availiableTests.add("connectedAndroidTestDebug")
     }
