@@ -22,16 +22,21 @@ ext.commonSnapshot = '528b1d0'
 
 ext.buildTools = "22.0.1"
 
-ext.testCoverage = true // toggles AndroidTest JaCoCo reports
-ext.minify = false // toggles minify for the release build
-
-ext.packageList = ['META-INF/LICENSE','META-INF/LICENSE.txt','META-INF/NOTICE','META-INF/NOTICE.txt']
-
 /**************************************************************************************************
                                         GLOBAL VARIABLES
  *************************************************************************************************/
 
- 
+ext.testCoverage = true // toggles AndroidTest JaCoCo reports
+ext.minify = false // toggles minify for the release build
+
+ext.packageList =   ['META-INF/LICENSE',
+                    'META-INF/LICENSE.txt',
+                    'META-INF/NOTICE',
+                    'META-INF/NOTICE.txt']
+
+ext.libraryProjectPath = new File("../androidlibrary/androidlibrary_lib")
+ext.commonProjectPath = new File("../androidcommon/androidcommon_lib")
+                    
 /**************************************************************************************************
                                         CUSTOM METHODS
  *************************************************************************************************/
