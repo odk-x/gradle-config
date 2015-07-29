@@ -1,0 +1,7 @@
+/**************************************************************************************************
+                                        GRADLE PLUGINS
+ *************************************************************************************************/
+ 
+ apply plugin: 'jacoco'  // Can't (yet) use integrated Android JaCoCo for UnitTests,
+                         // see: https://code.google.com/p/android/issues/detail?id=144664
+                       
