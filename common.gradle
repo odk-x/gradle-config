@@ -1,0 +1,11 @@
+/**************************************************************************************************
+                                        GRADLE CONFIG
+ *************************************************************************************************/
+ 
+ def pluginsURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/master/plugins.gradle'
+ def variablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/master/variables.gradle'
+ def runnablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/master/runnables.gradle'
+ 
+ ext.settingsScripts = [variablesURL]
+ ext.libraryScripts = [pluginsURL,variablesURL,runnablesURL]
+ ext.applicationScripts = [pluginsURL,variablesURL,runnablesURL]
