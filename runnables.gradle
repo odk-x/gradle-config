@@ -94,3 +94,11 @@ task generateSnapshotVersion {
         project.ext.snapshotVersionCode = gitHash.toString().trim()
     }
 }
+
+task setReleaseVersion << {
+    version = releaseVersionCode
+}
+
+task setSnapshotVersion(dependsOn: "generateSnapshotVersion") << {
+    version = snapshotVersionCode
+}

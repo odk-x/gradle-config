@@ -10,10 +10,13 @@ ext.compileVersion = 19
 ext.minVersion = 16
 ext.targetVersion = 16
 
-ext.playServicesVersion = '1'
+ext.playServicesVersion = 1
 
 ext.librarySnapshot = 'becb87a'
 ext.commonSnapshot = '528b1d0'
+
+ext.libraryRelease = ext.librarySnapshot//ext.releaseVersionCode
+ext.commonRelease = ext.commonSnapshot//ext.releaseVersionCode
 
 ext.buildTools = "22.0.1"
 
@@ -24,13 +27,15 @@ ext.buildTools = "22.0.1"
 ext.testCoverage = true // toggles AndroidTest JaCoCo reports
 ext.minify = false // toggles minify for the release build
 
-ext.packageList =   ['META-INF/LICENSE',
+ext.packageList =   ['META-INF/DEPENDENCIES',
+                    'META-INF/LICENSE',
                     'META-INF/LICENSE.txt',
                     'META-INF/NOTICE',
-                    'META-INF/NOTICE.txt']
-                    
-ext.mavenURLList =  ['http://cwe.cs.washington.edu:8082/artifactory/libs-release',
-                    'http://cwe.cs.washington.edu:8082/artifactory/libs-snapshot']
+                    'META-INF/NOTICE.txt',
+                    'META-INF/services/com.fasterxml.jackson.core.JsonFactory',
+                    'META-INF/services/com.fasterxml.jackson.core.ObjectCodec',
+                    'META-INF/services/javax.ws.rs.ext.MessageBodyReader',
+                    'META-INF/services/javax.ws.rs.ext.MessageBodyWriter']
 
 
 ext.libraryProjectPath = new File("../androidlibrary/androidlibrary_lib")
@@ -46,4 +51,16 @@ ext.commonProjectName = ext.libraryProjectRoot + ext.commonProjectChild
 ext.commonArtifactName = 'androidcommon_lib'
 
 ext.playServicesName = 'google-play-services-ODK-SNAPSHOT'
+
+ext.coreProjectChild = ':core_app'
+ext.coreName = '.core'
+
+ext.surveyProjectChild = ':survey_app'
+ext.surveyName = '.survey.android'
+
+ext.syncProjectChild = ':sync_app'
+ext.syncName = '.sync'
+
+ext.tablesProjectChild = ':tables_app'
+ext.tablesName = '.tables'
                     
