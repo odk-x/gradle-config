@@ -95,10 +95,10 @@ task generateSnapshotVersion {
     }
 }
 
-task setReleaseVersion << {
+task releaseVersion << {
     version = releaseVersionCode
 }
 
-task setSnapshotVersion(dependsOn: "generateSnapshotVersion") << {
+task snapshotVersion(dependsOn: "generateSnapshotVersion") << {
     version = snapshotVersionCode
 }
