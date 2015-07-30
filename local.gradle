@@ -1,0 +1,11 @@
+/**************************************************************************************************
+                                        GRADLE CONFIG
+ *************************************************************************************************/
+ def shortVariablesPath = '../gradle-config/variables.gradle'
+ def pluginsPath = '../../gradle-config/plugins.gradle'
+ def variablesPath = '../../gradle-config/variables.gradle'
+ def runnablesPath = '../../gradle-config/runnables.gradle'
+ 
+ ext.settingsScripts = [shortVariablesPath]
+ ext.libraryScripts = [pluginsPath,variablesPath,runnablesPath]
+ ext.applicationScripts = [pluginsPath,variablesPath,runnablesPath]
