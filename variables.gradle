@@ -63,4 +63,6 @@ ext.syncName = '.sync'
 
 ext.tablesProjectChild = ':tables_app'
 ext.tablesName = '.tables'
-                    
+
+ext.scanProjectChild = ':scan_app'
+ext.scanName = '.scan'
