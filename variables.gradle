@@ -1,32 +1,53 @@
 /**************************************************************************************************
+                                        GRADLE VARIABLES
+ *************************************************************************************************/
+
+/*
+*   @author: marshallbradley93@gmail.com
+*   
+*   This Gradle script contains common build logic in the form of variables (this includes, but is
+*   not limited to version codes and the like). These variables are dispatched to the relevant 
+*   project files via either local or remote.gradle.
+*
+*   @TODO: Use objects, convert to custom Gradle plugin
+*/
+
+/**************************************************************************************************
                                         VERSION CODES
  *************************************************************************************************/
 
-ext.groupId = 'org.opendatakit'
+// ODK Application versions
+ext.groupId = 'org.opendatakit' // ApplicationID is groupId + appName
 ext.versionCodeName = '2.0'
-ext.releaseVersionCode = 127
 
+// SDK versions
 ext.compileVersion = 19
 ext.minVersion = 16
 ext.targetVersion = 16
 
-ext.playServicesVersion = 1
+// Build tools
+ext.buildTools = "22.0.1"
 
+// Artifact verisons
+ext.playServicesVersion = 1 // Play Services artifact version 
+
+// Release
+ext.releaseVersionCode = 127
+ext.libraryRelease = ext.librarySnapshot //ext.releaseVersionCode // Update when release artifact is
+ext.commonRelease = ext.commonSnapshot //ext.releaseVersionCode   // published
+
+// Snapshot
 ext.librarySnapshot = 'becb87a'
 ext.commonSnapshot = '528b1d0'
-
-ext.libraryRelease = ext.librarySnapshot//ext.releaseVersionCode
-ext.commonRelease = ext.commonSnapshot//ext.releaseVersionCode
-
-ext.buildTools = "22.0.1"
 
 /**************************************************************************************************
                                         GLOBAL VARIABLES
  *************************************************************************************************/
 
-ext.testCoverage = true // toggles AndroidTest JaCoCo reports
-ext.minify = false // toggles minify for the release build
+ext.testCoverage = true // Toggles AndroidTest JaCoCo reports
+ext.minify = false // Toggles minify for the release build
 
+// List of files to apply "PickFirst" to in Gradle dependencies closure
 ext.packageList =   ['META-INF/DEPENDENCIES',
                     'META-INF/LICENSE',
                     'META-INF/LICENSE.txt',
@@ -38,31 +59,69 @@ ext.packageList =   ['META-INF/DEPENDENCIES',
                     'META-INF/services/javax.ws.rs.ext.MessageBodyWriter']
 
 
+/**************************************************************************************************
+                                             NAMES
+ *************************************************************************************************/
+
+/* -- LIBRARY -- */
+
+// Path from top-level Gradle script to local version of AndroidLibrary
 ext.libraryProjectPath = new File("../androidlibrary/androidlibrary_lib")
+
+// Root project name
 ext.libraryProjectRoot = ':androidlibrary'
+
+// Child project name
 ext.libraryProjectChild = ':androidlibrary_lib'
+
+// External child project name
 ext.libraryProjectName = ext.libraryProjectRoot + ext.libraryProjectChild
+
+// Artifact name
 ext.libraryArtifactName = 'androidlibrary_lib'
 
+/* -- COMMON -- */
+
+// Path from top-level Gradle script to local version of AndroidCommon
 ext.commonProjectPath = new File("../androidcommon/androidcommon_lib")
+
+// Root project name
 ext.commonProjectRoot = ':androidcommon'
+
+// Child project name
 ext.commonProjectChild = ':androidcommon_lib'
+
+// External child project name
 ext.commonProjectName = ext.libraryProjectRoot + ext.commonProjectChild
+
+// Artifact name
 ext.commonArtifactName = 'androidcommon_lib'
 
+/* -- PLAY SERVICES -- */
+
 ext.playServicesName = 'google-play-services-ODK-SNAPSHOT'
+
+/* -- CORE -- */
 
 ext.coreProjectChild = ':core_app'
 ext.coreName = '.core'
 
+/* -- SCAN -- */
+
+ext.scanProjectChild = ':scan_app'
+ext.scanName = '.scan'
+
+/* -- SURVEY -- */
+
 ext.surveyProjectChild = ':survey_app'
 ext.surveyName = '.survey.android'
+
+/* -- SYNC -- */
 
 ext.syncProjectChild = ':sync_app'
 ext.syncName = '.sync'
 
+/* -- TABLES -- */
+
 ext.tablesProjectChild = ':tables_app'
 ext.tablesName = '.tables'
-
-ext.scanProjectChild = ':scan_app'
-ext.scanName = '.scan'

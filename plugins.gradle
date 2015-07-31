@@ -2,6 +2,15 @@
                                         GRADLE PLUGINS
  *************************************************************************************************/
  
- apply plugin: 'jacoco'  // Can't (yet) use integrated Android JaCoCo for UnitTests,
-                         // see: https://code.google.com/p/android/issues/detail?id=144664
+/*
+*	@author: marshallbradley93@gmail.com
+*	
+*   This Gradle script applies plugins used across the ODK tools. These plugins are dispatched to 
+*	the relevant project files via either local or remote.gradle.
+*
+*	@TODO: Convert to custom Gradle plugin
+*/
+
+apply plugin: 'jacoco'  // Can't (yet) use integrated Android JaCoCo for UnitTests,
+                     	// see: https://code.google.com/p/android/issues/detail?id=144664
                        

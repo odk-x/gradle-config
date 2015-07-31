@@ -1,11 +1,25 @@
 /**************************************************************************************************
-                                        GRADLE CONFIG
+                                        GRADLE REMOTE DISPATCH
  *************************************************************************************************/
+
+/*
+*	@author: marshallbradley93@gmail.com
+*	
+*	This Gradle script handles dispatching various ODK Project buildscripts to where the common
+*	logic is stored. In this case the logic is assumed to be stored remotely (rather than locally).
+*
+*	@TODO: Merge with local.gradle, make use of objects, convert to custom Gradle plugin
+*/
  
- def pluginsURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/master/plugins.gradle'
- def variablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/master/variables.gradle'
- def runnablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/master/runnables.gradle'
- 
- ext.settingsScripts = [variablesURL]
- ext.libraryScripts = [pluginsURL,variablesURL,runnablesURL]
- ext.applicationScripts = [pluginsURL,variablesURL,runnablesURL]
+def pluginsURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/master/plugins.gradle'
+def variablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/master/variables.gradle'
+def runnablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/master/runnables.gradle'
+
+// The scripts to dispatch to each settings.gradle file
+ext.settingsScripts = [variablesURL]
+
+// The scripts to dispatch to each ODK_lib.gradle file
+ext.libraryScripts = [pluginsURL,variablesURL,runnablesURL]
+
+// The scripts to dispatch to each ODK_app.gradle files
+ext.applicationScripts = [pluginsURL,variablesURL,runnablesURL]

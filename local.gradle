@@ -1,11 +1,27 @@
 /**************************************************************************************************
-                                        GRADLE CONFIG
+                                        GRADLE LOCAL DISPATCH
  *************************************************************************************************/
- def shortVariablesPath = '../gradle-config/variables.gradle'
- def pluginsPath = '../../gradle-config/plugins.gradle'
- def variablesPath = '../../gradle-config/variables.gradle'
- def runnablesPath = '../../gradle-config/runnables.gradle'
- 
- ext.settingsScripts = [shortVariablesPath]
- ext.libraryScripts = [pluginsPath,variablesPath,runnablesPath]
- ext.applicationScripts = [pluginsPath,variablesPath,runnablesPath]
+
+/*
+*	@author: marshallbradley93@gmail.com
+*	
+*	This Gradle script handles dispatching various ODK Project buildscripts to where the common
+*	logic is stored. In this case the logic is assumed to be stored locally (rather than remotely).
+*
+*	@TODO: Merge with remote.gradle, make use of objects, convert to custom Gradle plugin
+*/
+
+def shortVariablesPath = '../gradle-config/variables.gradle'
+def pluginsPath = '../../gradle-config/plugins.gradle'
+def variablesPath = '../../gradle-config/variables.gradle'
+def runnablesPath = '../../gradle-config/runnables.gradle'
+
+// The scripts to dispatch to each settings.gradle file -- N.B. is one directory level higher than others
+// due to location of settings.gradle in each project
+ext.settingsScripts = [shortVariablesPath]
+
+// the scripts to dispatch to each ODK_lib.gradle file
+ext.libraryScripts = [pluginsPath,variablesPath,runnablesPath]
+
+// the scripts to dispatch to each ODK_app.gradle file
+ext.applicationScripts = [pluginsPath,variablesPath,runnablesPath]
