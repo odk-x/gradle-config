@@ -31,14 +31,14 @@ ext.buildTools = "22.0.1"
 // Artifact verisons
 ext.playServicesVersion = 1 // Play Services artifact version 
 
+// Snapshot
+ext.librarySnapshot = 'becb87a'
+ext.commonSnapshot = '528b1d0'
+
 // Release
 ext.releaseVersionCode = 127
 ext.libraryRelease = ext.librarySnapshot //ext.releaseVersionCode // Update when release artifact is
 ext.commonRelease = ext.commonSnapshot //ext.releaseVersionCode   // published
-
-// Snapshot
-ext.librarySnapshot = 'becb87a'
-ext.commonSnapshot = '528b1d0'
 
 /**************************************************************************************************
                                         GLOBAL VARIABLES
