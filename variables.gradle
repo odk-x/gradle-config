@@ -125,3 +125,8 @@ ext.syncName = '.sync'
 
 ext.tablesProjectChild = ':tables_app'
 ext.tablesName = '.tables'
+
+/* -- Collect-- */
+
+ext.collectProjectChild = ':collect_app'
+ext.collectName = '.collect'
