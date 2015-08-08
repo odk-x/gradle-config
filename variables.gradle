@@ -29,14 +29,16 @@ ext.targetVersion = 16
 ext.buildTools = "22.0.1"
 
 // Artifact verisons
-ext.playServicesVersion = 1 // Play Services artifact version 
+ext.playServicesVersion = 3136110 // Play Services artifact version 
 
 // Snapshot
 ext.librarySnapshot = 'becb87a'
 ext.commonSnapshot = '528b1d0'
+ext.playServicesSnapshot = '' + ext.playServicesVersion
 
 // Release
 ext.releaseVersionCode = 127
+ext.playServicesRelease = '' + ext.playServicesVersion
 ext.libraryRelease = ext.librarySnapshot //ext.releaseVersionCode // Update when release artifact is
 ext.commonRelease = ext.commonSnapshot //ext.releaseVersionCode   // published
 
@@ -98,8 +100,17 @@ ext.commonProjectName = ext.libraryProjectRoot + ext.commonProjectChild
 ext.commonArtifactName = 'androidcommon_lib'
 
 /* -- PLAY SERVICES -- */
+// Child project name
+ext.playServicesChild = 'google-play-services-ODK-SNAPSHOT_lib'
 
-ext.playServicesName = 'google-play-services-ODK-SNAPSHOT'
+// Path from top-level Gradle script to local version of google-play-services
+ext.playServicesPath = new File((new File(new File(".").absolutePath)).getParentFile().getParentFile(),"google-play-services/" + ext.playServicesChild)
+
+// External child project name
+ext.playServicesName = groupId + ':' + ext.playServicesChild
+
+// Artifact name
+ext.playServicesArtifactName = ext.playServicesChild
 
 /* -- CORE -- */
 
