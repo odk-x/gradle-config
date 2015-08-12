@@ -100,14 +100,18 @@ ext.commonProjectName = ext.libraryProjectRoot + ext.commonProjectChild
 ext.commonArtifactName = 'androidcommon_lib'
 
 /* -- PLAY SERVICES -- */
-// Child project name
-ext.playServicesChild = 'google-play-services-ODK-SNAPSHOT_lib'
 
 // Path from top-level Gradle script to local version of google-play-services
-ext.playServicesPath = new File((new File(new File(".").absolutePath)).getParentFile().getParentFile(),"google-play-services/" + ext.playServicesChild)
+ext.playServicesPath = new File("../google-play-services/google-play-services-ODK-SNAPSHOT_lib")
+
+// Root project name
+ext.playServicesRoot = ':playservices'
+
+// Child project name
+ext.playServicesChild = ':google-play-services-ODK-SNAPSHOT_lib'
 
 // External child project name
-ext.playServicesName = groupId + ':' + ext.playServicesChild
+ext.playServicesName = ext.playServicesRoot + ext.playServicesChild
 
 // Artifact name
 ext.playServicesArtifactName = ext.playServicesChild
