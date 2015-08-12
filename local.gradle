@@ -4,7 +4,7 @@
 
 /*
 *	@author: marshallbradley93@gmail.com
-*	
+*
 *	This Gradle script handles dispatching various ODK Project buildscripts to where the common
 *	logic is stored. In this case the logic is assumed to be stored locally (rather than remotely).
 *

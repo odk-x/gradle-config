@@ -4,9 +4,9 @@
 
 /*
 *   @author: marshallbradley93@gmail.com
-*   
+*
 *   This Gradle script contains common build logic in the form of variables (this includes, but is
-*   not limited to version codes and the like). These variables are dispatched to the relevant 
+*   not limited to version codes and the like). These variables are dispatched to the relevant
 *   project files via either local or remote.gradle.
 *
 *   @TODO: Use objects, convert to custom Gradle plugin
@@ -29,10 +29,10 @@ ext.targetVersion = 16
 ext.buildTools = "22.0.1"
 
 // Artifact verisons
-ext.playServicesVersion = 3136110 // Play Services artifact version 
+ext.playServicesVersion = 3136110 // Play Services artifact version
 
 // Snapshot
-ext.librarySnapshot = 'becb87a'
+ext.librarySnapshot = 'becb87a' // These are temporary place holders until a versioned release
 ext.commonSnapshot = '528b1d0'
 ext.playServicesSnapshot = '' + ext.playServicesVersion
 

@@ -4,7 +4,7 @@
 
 /*
 *   @author: marshallbradley93@gmail.com
-*   
+*
 *   This Gradle script contains common build logic in the form of runnables (both tasks and methods).
 *   These methods are dispatched to the relevant project files via either local or remote.gradle.
 *
@@ -17,60 +17,60 @@
 
 // Check which test types (unit-test, androidtest) have been implemented
 def listTests() {
-    
+
     def availiableTests = []
     def testFolder = new File("${buildDir.parent}/src/test")
     def androidTestFolder = new File("${buildDir.parent}/src/androidTest")
-    
+
     // Check unit-test location exists
     if (testFolder.exists()) {
         availiableTests.add("testDebug")
     }
-    
+
     // Check androidtest location exists
     if (androidTestFolder.exists()) {
         availiableTests.add("connectedAndroidTestDebug")
     }
-   
+
     // Return a list of test types that have been implemented
     return availiableTests
  }
- 
+
  // List locations of availiable generated JaCoCo files
  def listTestFiles() {
-    
+
     def testFiles = []
     def testList = listTests()
-  
+
     // Check if unit-test JaCoCo file exists
     if (testList.contains("testDebug")) {
         testFiles.add("${buildDir}/jacoco/testDebug.exec")
     }
-    
+
     // Check if androidest JaCoCo file exists
     if (testList.contains("connectedAndroidTestDebug")) {
         testFiles.add("${buildDir}/outputs/code-coverage/connected/coverage.ec")
     }
-    
+
     // Return list of file locations
     return testFiles
  }
- 
+
 /**************************************************************************************************
                                             TASKS
  *************************************************************************************************/
- 
+
 // Code to merge JaCoCo .exec/.ec files
 // Outputs to ${buildDir}/jacoco/TASK_NAME.exec
 task jacocoMergeGen(type: JacocoMerge, dependsOn: listTests()) {
-    
+
     description = "Merge code coverage files from all availiable test types"
     executionData = files(listTestFiles())
 }
- 
+
 // Code to generate JaCoCo reports
 task jacocoTestDebugReport(type:JacocoReport, dependsOn: ["jacocoMergeGen"]) {
-    
+
     group = "Reporting"
     description = "Generate a JaCoCo code-coverage report for debug tests"
 
