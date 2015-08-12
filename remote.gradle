@@ -6,20 +6,28 @@
 *	@author: marshallbradley93@gmail.com
 *
 *	This Gradle script handles dispatching various ODK Project buildscripts to where the common
-*	logic is stored. In this case the logic is assumed to be stored remotely (rather than locally).
-*
-*	@TODO: Merge with local.gradle, make use of objects, convert to custom Gradle plugin
+*	logic is stored.
 */
 
-def pluginsURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/master/plugins.gradle'
-def variablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/master/variables.gradle'
-def runnablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/master/runnables.gradle'
+def gradleConfigVersion = '1.0'
 
-// The scripts to dispatch to each settings.gradle file
-ext.settingsScripts = [variablesURL]
+// Remote Paths
+def pluginsURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' + gradleConfigVersion + '/plugins.gradle'
+def variablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' + gradleConfigVersion + '/variables.gradle'
+def runnablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' + gradleConfigVersion + '/runnables.gradle'
+
+// Local Paths
+def shallowVariablesLocalPath=  '../gradle-config/variables.gradle'
+def pluginsLocalPath = '../../gradle-config/plugins.gradle'
+def variablesLocalPath = '../../gradle-config/variables.gradle'
+def runnablesLocalPath = '../../gradle-config/runnables.gradle'
+
+// The scripts to dispatch to each settings.gradle file -- N.B. is one directory level higher than others
+// due to the location of settings.gradle in each project
+ext.settingsScripts = gradle.ext.useLocalPaths ? [shallowVariablesLocalPath] : [variablesURL]
 
 // The scripts to dispatch to each ODK_lib.gradle file
-ext.libraryScripts = [pluginsURL,variablesURL,runnablesURL]
+ext.libraryScripts = gradle.ext.useLocalPaths ? [pluginsLocalPath,variablesLocalPath,runnablesLocalPath] : [pluginsURL,variablesURL,runnablesURL]
 
 // The scripts to dispatch to each ODK_app.gradle files
-ext.applicationScripts = [pluginsURL,variablesURL,runnablesURL]
+ext.applicationScripts = gradle.ext.useLocalPaths ? [pluginsLocalPath,variablesLocalPath,runnablesLocalPath] : [pluginsURL,variablesURL,runnablesURL]
