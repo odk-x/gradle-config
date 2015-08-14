@@ -9,12 +9,11 @@
 *	logic is stored.
 */
 
-def gradleConfigVersion = '1.0'
 
 // Remote Paths
-def pluginsURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' + gradleConfigVersion + '/plugins.gradle'
-def variablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' + gradleConfigVersion + '/variables.gradle'
-def runnablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' + gradleConfigVersion + '/runnables.gradle'
+def pluginsURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' + gradle.ext.gradleConfigVersion + '/plugins.gradle'
+def variablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' + gradle.ext.gradleConfigVersion + '/variables.gradle'
+def runnablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' + gradle.ext.gradleConfigVersion + '/runnables.gradle'
 
 // Local Paths
 def shallowVariablesLocalPath=  '../gradle-config/variables.gradle'
