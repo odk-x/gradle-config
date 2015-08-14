@@ -141,6 +141,11 @@ ext.syncName = '.sync'
 ext.tablesProjectChild = ':tables_app'
 ext.tablesName = '.tables'
 
+/* -- SENSORS -- */
+
+ext.sensorsProjectChild = ':sensorsframework_app'
+ext.sensorsName = '.sensors'
+
 /* -- Collect-- */
 
 ext.collectProjectChild = ':collect_app'
