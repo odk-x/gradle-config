@@ -32,8 +32,8 @@ ext.buildTools = "22.0.1"
 ext.playServicesVersion = 3136110 // Play Services artifact version
 
 // Snapshot
-ext.librarySnapshot = 'becb87a' // These are temporary place holders until a versioned release
-ext.commonSnapshot = '528b1d0'
+ext.librarySnapshot = '4177ac7' // These are temporary place holders until a versioned release
+ext.commonSnapshot = 'a9199e8'
 ext.playServicesSnapshot = '' + ext.playServicesVersion
 
 // Release
