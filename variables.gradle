@@ -105,7 +105,7 @@ ext.commonArtifactName = 'androidcommon_lib'
 ext.playServicesPath = new File("../google-play-services/google-play-services-ODK-SNAPSHOT_lib")
 
 // Root project name
-ext.playServicesRoot = ':playservices'
+ext.playServicesRoot = ':google-play-services'
 
 // Child project name
 ext.playServicesChild = ':google-play-services-ODK-SNAPSHOT_lib'
