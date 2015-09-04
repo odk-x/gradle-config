@@ -68,7 +68,7 @@ ext.packageList =   ['META-INF/DEPENDENCIES',
 /* -- LIBRARY -- */
 
 // Path from top-level Gradle script to local version of AndroidLibrary
-ext.libraryProjectPath = new File("../androidlibrary/androidlibrary_lib")
+ext.libraryProjectPath = new File(gradle.ext.workspacePath + "/androidlibrary/androidlibrary_lib")
 
 // Root project name
 ext.libraryProjectRoot = ':androidlibrary'
@@ -85,7 +85,7 @@ ext.libraryArtifactName = 'androidlibrary_lib'
 /* -- COMMON -- */
 
 // Path from top-level Gradle script to local version of AndroidCommon
-ext.commonProjectPath = new File("../androidcommon/androidcommon_lib")
+ext.commonProjectPath = new File(gradle.ext.workspacePath + "/androidcommon/androidcommon_lib")
 
 // Root project name
 ext.commonProjectRoot = ':androidcommon'
@@ -102,7 +102,7 @@ ext.commonArtifactName = 'androidcommon_lib'
 /* -- PLAY SERVICES -- */
 
 // Path from top-level Gradle script to local version of google-play-services
-ext.playServicesPath = new File("../google-play-services/google-play-services-ODK-SNAPSHOT_lib")
+ext.playServicesPath = new File(gradle.ext.workspacePath + "/google-play-services/google-play-services-ODK-SNAPSHOT_lib")
 
 // Root project name
 ext.playServicesRoot = ':google-play-services'

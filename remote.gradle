@@ -16,14 +16,13 @@ def variablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/
 def runnablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' + gradle.ext.gradleConfigVersion + '/runnables.gradle'
 
 // Local Paths
-def shallowVariablesLocalPath=  '../gradle-config/variables.gradle'
-def pluginsLocalPath = '../../gradle-config/plugins.gradle'
-def variablesLocalPath = '../../gradle-config/variables.gradle'
-def runnablesLocalPath = '../../gradle-config/runnables.gradle'
+def pluginsLocalPath = gradle.ext.workspacePath + '/gradle-config/plugins.gradle'
+def variablesLocalPath = gradle.ext.workspacePath + '/gradle-config/variables.gradle'
+def runnablesLocalPath = gradle.ext.workspacePath + '/gradle-config/runnables.gradle'
 
 // The scripts to dispatch to each settings.gradle file -- N.B. is one directory level higher than others
 // due to the location of settings.gradle in each project
-ext.settingsScripts = gradle.ext.useLocalPaths ? [shallowVariablesLocalPath] : [variablesURL]
+ext.settingsScripts = gradle.ext.useLocalPaths ? [variablesLocalPath] : [variablesURL]
 
 // The scripts to dispatch to each ODK_lib.gradle file
 ext.libraryScripts = gradle.ext.useLocalPaths ? [pluginsLocalPath,variablesLocalPath,runnablesLocalPath] : [pluginsURL,variablesURL,runnablesURL]
