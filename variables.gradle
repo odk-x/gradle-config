@@ -16,6 +16,8 @@
                                         VERSION CODES
  *************************************************************************************************/
 
+logger.warn('gradle-config/variables.gradle -- gradle.ext.workspacePath: ' + gradle.ext.workspacePath)
+
 // ODK Application versions
 ext.groupId = 'org.opendatakit' // ApplicationID is groupId + appName
 ext.versionCodeName = '2.0'

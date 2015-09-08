@@ -15,6 +15,8 @@ def pluginsURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' 
 def variablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' + gradle.ext.gradleConfigVersion + '/variables.gradle'
 def runnablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' + gradle.ext.gradleConfigVersion + '/runnables.gradle'
 
+logger.warn('gradle-config/remote.gradle -- gradle.ext.workspacePath: ' + gradle.ext.workspacePath)
+
 // Local Paths
 def pluginsLocalPath = gradle.ext.workspacePath + '/gradle-config/plugins.gradle'
 def variablesLocalPath = gradle.ext.workspacePath + '/gradle-config/variables.gradle'
