@@ -31,7 +31,7 @@ ext.targetVersion = 16
 ext.buildTools = "22.0.1"
 
 // Artifact verisons
-ext.playServicesVersion = 3136110 // Play Services artifact version
+ext.playServicesVersion = 3136111 // Play Services artifact version
 
 // Snapshot
 ext.librarySnapshot = '4177ac7' // These are temporary place holders until a versioned release
