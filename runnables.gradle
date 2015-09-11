@@ -109,13 +109,14 @@ task jacocoTestDebugReport(type:JacocoReport, dependsOn: ["jacocoMergeGen"]) {
 // Define the snapshot version to be the git hash
 task generateSnapshotVersion {
     def gitHash = new ByteArrayOutputStream()
+    def date = (new Date()).format('yyyyMMddHHmm')
     exec {
         commandLine 'git', 'rev-parse', '--short', 'HEAD'
         standardOutput = gitHash
     }
     doLast {
         // Package the snapshot version into an external object
-        project.ext.snapshotVersionCode = gitHash.toString().trim()
+        project.ext.snapshotVersionCode = 'v' + gitHash.toString().trim() + '_b' + date
     }
 }
 
