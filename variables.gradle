@@ -35,7 +35,7 @@ ext.playServicesVersion = 3136111 // Play Services artifact version
 
 // Snapshot
 ext.librarySnapshot = '4177ac7' // These are temporary place holders until a versioned release
-ext.commonSnapshot = 'a9199e8'
+ext.commonSnapshot = 'vbe0e01d_b201509171357'
 ext.playServicesSnapshot = '' + ext.playServicesVersion
 
 // Release
