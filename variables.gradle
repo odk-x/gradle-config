@@ -25,7 +25,7 @@ ext.versionCodeName = '2.0'
 // SDK versions
 ext.compileVersion = 19
 ext.minVersion = 16
-ext.targetVersion = 16
+ext.targetVersion = 19
 
 // Build tools
 ext.buildTools = "22.0.1"
