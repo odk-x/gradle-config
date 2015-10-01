@@ -30,6 +30,9 @@ ext.targetVersion = 19
 // Build tools
 ext.buildTools = "22.0.1"
 
+// Java version
+ext.javaVersion = JavaVersion.VERSION_1_7
+
 // Artifact verisons
 ext.playServicesVersion = 3136111 // Play Services artifact version
 
