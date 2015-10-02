@@ -36,16 +36,33 @@ ext.javaVersion = JavaVersion.VERSION_1_7
 // Artifact verisons
 ext.playServicesVersion = 3136111 // Play Services artifact version
 
-// Snapshot
-ext.librarySnapshot = 'vc741957_b201509171355' // These are temporary place holders until a versioned release
-ext.commonSnapshot =  'vbe0e01d_b201509171357'
-ext.playServicesSnapshot = '' + ext.playServicesVersion
-
 // Release
 ext.releaseVersionCode = 127
 ext.playServicesRelease = '' + ext.playServicesVersion
-ext.libraryRelease = ext.librarySnapshot //ext.releaseVersionCode // Update when release artifact is
-ext.commonRelease = ext.commonSnapshot //ext.releaseVersionCode   // published
+ext.libraryRelease = 'vc741957_b201509171355' // Using a snapshot version until first release
+ext.commonRelease = 'vbe0e01d_b201509171357'
+
+
+// Grab the latest binary version from the server
+ext.latestVersion = 'latest.integration'
+
+/**************************************************************************************************
+                                        SNAPSHOT VERSIONS
+ *************************************************************************************************/
+// To tie yourself to a specific binary snapshot, set the version you wish to use and set the
+// corresponding useLatest to false
+
+// androidlibrary
+ext.useLatestLibrary = true
+ext.librarySnapshot = 'vc741957_b201509171355'
+
+// androidcommon
+ext.useLatestCommon = true
+ext.commonSnapshot =  'vbe0e01d_b201509171357'
+
+// playservices
+ext.useLatestPlayServices = true
+ext.playServicesSnapshot = '' + ext.playServicesVersion
 
 /**************************************************************************************************
                                         GLOBAL VARIABLES
