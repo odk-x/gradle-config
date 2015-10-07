@@ -116,7 +116,7 @@ task generateSnapshotVersion {
     }
     doLast {
         // Package the snapshot version into an external object
-        project.ext.snapshotVersionCode = 'v' + gitHash.toString().trim() + '_b' + date
+        project.ext.snapshotVersionCode = 'b' + date + '_v' + gitHash.toString().trim()
     }
 }
 
