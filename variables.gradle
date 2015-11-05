@@ -39,8 +39,8 @@ ext.playServicesVersion = 3136111 // Play Services artifact version
 // Release
 ext.releaseVersionCode = 127
 ext.playServicesRelease = '' + ext.playServicesVersion
-ext.libraryRelease = 'vc741957_b201509171355' // Using a snapshot version until first release
-ext.commonRelease = 'vbe0e01d_b201509171357'
+ext.libraryRelease = 'b201511031110_v79daf03' // Using a snapshot version until first release
+ext.commonRelease = 'b201511041638_v439968d'
 
 
 // Grab the latest binary version from the server
@@ -54,11 +54,11 @@ ext.latestVersion = 'latest.integration'
 
 // androidlibrary
 ext.useLatestLibrary = true
-ext.librarySnapshot = 'vc741957_b201509171355'
+ext.librarySnapshot = 'b201511031110_v79daf03'
 
 // androidcommon
 ext.useLatestCommon = true
-ext.commonSnapshot =  'vbe0e01d_b201509171357'
+ext.commonSnapshot =  'b201511041638_v439968d'
 
 // playservices
 ext.useLatestPlayServices = true
