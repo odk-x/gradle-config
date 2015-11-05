@@ -24,12 +24,12 @@ def listTests() {
 
     // Check unit-test location exists
     if (testFolder.exists()) {
-        availiableTests.add("testDebug")
+        availiableTests.add("testDebugUnitTest")
     }
 
     // Check androidtest location exists
     if (androidTestFolder.exists()) {
-        availiableTests.add("connectedAndroidTestDebug")
+        availiableTests.add("connectedDebugAndroidTest")
     }
 
     // Return a list of test types that have been implemented
@@ -43,12 +43,12 @@ def listTests() {
     def testList = listTests()
 
     // Check if unit-test JaCoCo file exists
-    if (testList.contains("testDebug")) {
-        testFiles.add("${buildDir}/jacoco/testDebug.exec")
+    if (testList.contains("testDebugUnitTest")) {
+        testFiles.add("${buildDir}/jacoco/testDebugUnitTest.exec")
     }
 
     // Check if androidest JaCoCo file exists
-    if (testList.contains("connectedAndroidTestDebug")) {
+    if (testList.contains("connectedDebugAndroidTest")) {
         testFiles.add("${buildDir}/outputs/code-coverage/connected/coverage.ec")
     }
 
