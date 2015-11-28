@@ -41,7 +41,7 @@ ext.releaseVersionCode = 127
 ext.playServicesRelease = '' + ext.playServicesVersion
 ext.libraryRelease = 'b201511031110_v79daf03' // Using a snapshot version until first release
 ext.commonRelease = 'b201511041638_v439968d'
-
+ext.sensorsInterfacesRelease = '' //TODO
 
 // Grab the latest binary version from the server
 ext.latestVersion = 'latest.integration'
@@ -63,6 +63,10 @@ ext.commonSnapshot =  'b201511041638_v439968d'
 // playservices
 ext.useLatestPlayServices = true
 ext.playServicesSnapshot = '' + ext.playServicesVersion
+
+// sensorsinterfaces
+ext.useLatestSensorsInterfaces = true
+ext.sensorsInterfacesSnapshot = '' //TODO
 
 /**************************************************************************************************
                                         GLOBAL VARIABLES
@@ -175,8 +179,23 @@ ext.tablesName = '.tables'
 
 /* -- SENSORS -- */
 
-ext.sensorsProjectChild = ':sensorsframework_app'
-ext.sensorsName = '.sensors'
+ext.sensorsFrameworkProjectChild = ':sensorsframework_app'
+ext.sensorsFrameworkName = '.sensors'
+
+// Path from top-level Gradle script to local version of SensorsInterfaces
+ext.sensorsInterfacesProjectPath = new File(gradle.ext.workspacePath + "/sensors/sensorsinterfaces_lib")
+
+// Root project name
+ext.sensorsProjectRoot = ':sensors'
+
+// Child project name
+ext.sensorsInterfacesProjectChild = ':sensorsinterfaces_lib'
+
+// External child project name
+ext.sensorsInterfacesProjectName = ext.sensorsProjectRoot + ext.sensorsInterfacesProjectChild
+
+// Artifact name
+ext.sensorsInterfacesArtifactName = 'sensorsInterfaces_lib'
 
 /* -- Collect-- */
 
