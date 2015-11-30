@@ -98,7 +98,7 @@ ext.instrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
 
 
 /**************************************************************************************************
-                                             NAMES
+                                          NAMES (libs)
  *************************************************************************************************/
 
 /* -- LIBRARY -- */
@@ -152,6 +152,28 @@ ext.playServicesName = ext.playServicesRoot + ext.playServicesChild
 // Artifact name
 ext.playServicesArtifactName = 'google-play-services-ODK-SNAPSHOT_lib'
 
+/* -- SENSORS (lib) (SENSORSINTERFACES) -- */
+
+// Path from top-level Gradle script to local version of SensorsInterfaces
+ext.sensorsInterfacesProjectPath = new File(gradle.ext.workspacePath + "/sensors/sensorsinterfaces_lib")
+
+// Root project name
+ext.sensorsProjectRoot = ':sensors'
+
+// Child project name
+ext.sensorsInterfacesProjectChild = ':sensorsinterfaces_lib'
+
+// External child project name
+ext.sensorsInterfacesProjectName = ext.sensorsProjectRoot + ext.sensorsInterfacesProjectChild
+
+// Artifact name
+ext.sensorsInterfacesArtifactName = 'sensorsInterfaces_lib'
+
+
+/**************************************************************************************************
+                                          NAMES (apps)
+ *************************************************************************************************/
+
 /* -- CORE -- */
 
 ext.coreProjectChild = ':core_app'
@@ -177,25 +199,10 @@ ext.syncName = '.sync'
 ext.tablesProjectChild = ':tables_app'
 ext.tablesName = '.tables'
 
-/* -- SENSORS -- */
+/* -- SENSORS (app) (SENSORSFRAMEWORK) -- */
 
 ext.sensorsFrameworkProjectChild = ':sensorsframework_app'
 ext.sensorsFrameworkName = '.sensors'
-
-// Path from top-level Gradle script to local version of SensorsInterfaces
-ext.sensorsInterfacesProjectPath = new File(gradle.ext.workspacePath + "/sensors/sensorsinterfaces_lib")
-
-// Root project name
-ext.sensorsProjectRoot = ':sensors'
-
-// Child project name
-ext.sensorsInterfacesProjectChild = ':sensorsinterfaces_lib'
-
-// External child project name
-ext.sensorsInterfacesProjectName = ext.sensorsProjectRoot + ext.sensorsInterfacesProjectChild
-
-// Artifact name
-ext.sensorsInterfacesArtifactName = 'sensorsInterfaces_lib'
 
 /* -- Collect-- */
 
