@@ -11,14 +11,14 @@
 
 
 // Remote Paths
-def pluginsURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' + gradle.ext.gradleConfigVersion + '/plugins.gradle'
+def jacocoURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' + gradle.ext.gradleConfigVersion + '/jacoco.gradle'
 def variablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' + gradle.ext.gradleConfigVersion + '/variables.gradle'
 def runnablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' + gradle.ext.gradleConfigVersion + '/runnables.gradle'
 
 logger.warn('gradle-config/remote.gradle -- gradle.ext.workspacePath: ' + gradle.ext.workspacePath)
 
 // Local Paths
-def pluginsLocalPath = gradle.ext.workspacePath + '/gradle-config/plugins.gradle'
+def jacocoLocalPath = gradle.ext.workspacePath + '/gradle-config/jacoco.gradle'
 def variablesLocalPath = gradle.ext.workspacePath + '/gradle-config/variables.gradle'
 def runnablesLocalPath = gradle.ext.workspacePath + '/gradle-config/runnables.gradle'
 
@@ -27,7 +27,7 @@ def runnablesLocalPath = gradle.ext.workspacePath + '/gradle-config/runnables.gr
 ext.settingsScripts = gradle.ext.useLocalPaths ? [variablesLocalPath] : [variablesURL]
 
 // The scripts to dispatch to each ODK_lib.gradle file
-ext.libraryScripts = gradle.ext.useLocalPaths ? [pluginsLocalPath,variablesLocalPath,runnablesLocalPath] : [pluginsURL,variablesURL,runnablesURL]
+ext.libraryScripts = gradle.ext.useLocalPaths ? [jacocoLocalPath,variablesLocalPath,runnablesLocalPath] : [jacocoURL,variablesURL,runnablesURL]
 
 // The scripts to dispatch to each ODK_app.gradle files
-ext.applicationScripts = gradle.ext.useLocalPaths ? [pluginsLocalPath,variablesLocalPath,runnablesLocalPath] : [pluginsURL,variablesURL,runnablesURL]
+ext.applicationScripts = gradle.ext.useLocalPaths ? [jacocoLocalPath,variablesLocalPath,runnablesLocalPath] : [jacocoURL,variablesURL,runnablesURL]
