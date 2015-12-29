@@ -23,12 +23,12 @@ ext.groupId = 'org.opendatakit' // ApplicationID is groupId + appName
 ext.versionCodeName = '2.0'
 
 // SDK versions
-ext.compileVersion = 19
+ext.compileVersion = 22
 ext.minVersion = 16
 ext.targetVersion = 19
 
 // Build tools
-ext.buildTools = "22.0.1"
+ext.buildTools = "23.0.2"
 
 // Java version
 ext.javaVersion = JavaVersion.VERSION_1_7
