@@ -39,9 +39,6 @@ ext.playServicesVersion = 3136111 // Play Services artifact version
 // Release
 ext.releaseVersionCode = 127
 ext.playServicesRelease = '' + ext.playServicesVersion
-ext.libraryRelease = 'b201511031110_v79daf03' // Using a snapshot version until first release
-ext.commonRelease = 'b201511041638_v439968d'
-ext.sensorsInterfacesRelease = '' //TODO
 
 // Grab the latest binary version from the server
 ext.latestVersion = 'latest.integration'
