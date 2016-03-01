@@ -171,10 +171,10 @@ ext.sensorsInterfacesArtifactName = 'sensorsInterfaces_lib'
                                           NAMES (apps)
  *************************************************************************************************/
 
-/* -- CORE -- */
+/* -- Services -- */
 
 ext.coreProjectChild = ':core_app'
-ext.coreName = '.core'
+ext.coreName = '.services'
 
 /* -- SCAN -- */
 
