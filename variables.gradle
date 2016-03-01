@@ -20,7 +20,9 @@ logger.warn('gradle-config/variables.gradle -- gradle.ext.workspacePath: ' + gra
 
 // ODK Application versions
 ext.groupId = 'org.opendatakit' // ApplicationID is groupId + appName
-ext.versionCodeName = '2.0'
+ext.versionCodeName = '2.0 rev 200 v1'
+ext.releaseVersionCode = 200
+/****** IMPORTANT!*** THE versionCodeName AND releaseVersionCode MUST BE UPDATED TOGETHER *** IMPORTANT! *****/
 
 // SDK versions
 ext.compileVersion = 22
@@ -37,7 +39,6 @@ ext.javaVersion = JavaVersion.VERSION_1_7
 ext.playServicesVersion = 3136111 // Play Services artifact version
 
 // Release
-ext.releaseVersionCode = 200.1
 ext.playServicesRelease = '' + ext.playServicesVersion
 
 // Grab the latest binary version from the server
