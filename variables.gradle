@@ -37,7 +37,7 @@ ext.javaVersion = JavaVersion.VERSION_1_7
 ext.playServicesVersion = 3136111 // Play Services artifact version
 
 // Release
-ext.releaseVersionCode = 200
+ext.releaseVersionCode = 200_v1
 ext.playServicesRelease = '' + ext.playServicesVersion
 
 // Grab the latest binary version from the server
