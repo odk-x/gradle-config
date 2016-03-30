@@ -44,6 +44,9 @@ ext.playServicesRelease = '' + ext.playServicesVersion
 // Grab the latest binary version from the server
 ext.latestVersion = 'latest.integration'
 
+// Google Play Services version
+ext.gpsVersion = "6.5.87"
+
 /**************************************************************************************************
                                         SNAPSHOT VERSIONS
  *************************************************************************************************/
