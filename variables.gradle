@@ -35,12 +35,8 @@ ext.buildTools = "23.0.2"
 // Java version
 ext.javaVersion = JavaVersion.VERSION_1_7
 
-// Artifact verisons
-ext.playServicesVersion = 3136111 // Play Services artifact version
 
 // Release
-ext.playServicesRelease = '' + ext.playServicesVersion
-
 // Grab the latest binary version from the server
 ext.latestVersion = 'latest.integration'
 
@@ -60,10 +56,6 @@ ext.librarySnapshot = 'b201511031110_v79daf03'
 // androidcommon
 ext.useLatestCommon = true
 ext.commonSnapshot =  'b201511041638_v439968d'
-
-// playservices
-ext.useLatestPlayServices = true
-ext.playServicesSnapshot = '' + ext.playServicesVersion
 
 // sensorsinterfaces
 ext.useLatestSensorsInterfaces = true
@@ -136,22 +128,7 @@ ext.commonProjectName = ext.commonProjectRoot + ext.commonProjectChild
 // Artifact name
 ext.commonArtifactName = 'androidcommon_lib'
 
-/* -- PLAY SERVICES -- */
 
-// Path from top-level Gradle script to local version of google-play-services
-ext.playServicesPath = new File(gradle.ext.workspacePath + "/google-play-services/google-play-services-ODK-SNAPSHOT_lib")
-
-// Root project name
-ext.playServicesRoot = ':google-play-services'
-
-// Child project name
-ext.playServicesChild = ':google-play-services-ODK-SNAPSHOT_lib'
-
-// External child project name
-ext.playServicesName = ext.playServicesRoot + ext.playServicesChild
-
-// Artifact name
-ext.playServicesArtifactName = 'google-play-services-ODK-SNAPSHOT_lib'
 
 /* -- SENSORS (lib) (SENSORSINTERFACES) -- */
 
