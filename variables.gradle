@@ -35,31 +35,11 @@ ext.buildTools = "23.0.2"
 // Java version
 ext.javaVersion = JavaVersion.VERSION_1_7
 
-
-// Release
 // Grab the latest binary version from the server
 ext.latestVersion = 'latest.integration'
 
 // Google Play Services version
 ext.gpsVersion = "6.5.87"
-
-/**************************************************************************************************
-                                        SNAPSHOT VERSIONS
- *************************************************************************************************/
-// To tie yourself to a specific binary snapshot, set the version you wish to use and set the
-// corresponding useLatest to false
-
-// androidlibrary
-ext.useLatestLibrary = true
-ext.librarySnapshot = 'b201511031110_v79daf03'
-
-// androidcommon
-ext.useLatestCommon = true
-ext.commonSnapshot =  'b201511041638_v439968d'
-
-// sensorsinterfaces
-ext.useLatestSensorsInterfaces = true
-ext.sensorsInterfacesSnapshot = '' //TODO
 
 /**************************************************************************************************
                                         GLOBAL VARIABLES
@@ -79,6 +59,21 @@ ext.packageList =   ['META-INF/DEPENDENCIES',
                     'META-INF/services/javax.ws.rs.ext.MessageBodyReader',
                     'META-INF/services/javax.ws.rs.ext.MessageBodyWriter']
 
+
+/**************************************************************************************************
+                                        VARIANT CLASSIFIERS
+ *************************************************************************************************/
+ext.demoRelease = gradle.ext.flavorDemoPrefix + gradle.ext.typeReleaseSuffix
+ext.demoDebug = gradle.ext.flavorDemoPrefix + gradle.ext.typeDebugSuffix
+
+ext.masterRelease = gradle.ext.flavorMasterPrefix + gradle.ext.typeReleaseSuffix
+ext.masterDebug = gradle.ext.flavorMasterPrefix + gradle.ext.typeDebugSuffix
+
+ext.snapshotRelease = gradle.ext.flavorSnapshotPrefix + gradle.ext.typeReleaseSuffix
+ext.snapshotDebug = gradle.ext.flavorSnapshotPrefix + gradle.ext.typeDebugSuffix
+
+ext.uitestRelease = gradle.ext.flavorUITestPrefix + gradle.ext.typeReleaseSuffix
+ext.uitestDebug = gradle.ext.flavorUITestPrefix + gradle.ext.typeDebugSuffix
 
 /**************************************************************************************************
                                              TEST
@@ -108,8 +103,17 @@ ext.libraryProjectChild = ':androidlibrary_lib'
 // External child project name
 ext.libraryProjectName = ext.libraryProjectRoot + ext.libraryProjectChild
 
-// Artifact name
-ext.libraryArtifactName = 'androidlibrary_lib'
+// Demo Artifact name
+ext.libraryDemoArtifactName = gradle.ext.flavorDemoPrefix + gradle.ext.libraryArchiveSuffix
+
+// Master Artifact name
+ext.libraryMasterArtifactName = gradle.ext.flavorMasterPrefix + gradle.ext.libraryArchiveSuffix
+
+// Snapshot Artifact name
+ext.librarySnapshotArtifactName = gradle.ext.flavorSnapshotPrefix + gradle.ext.libraryArchiveSuffix
+
+// UITest Artifact name
+ext.libraryUITestArtifactName = gradle.ext.flavorUITestPrefix + gradle.ext.libraryArchiveSuffix
 
 /* -- COMMON -- */
 
@@ -125,10 +129,17 @@ ext.commonProjectChild = ':androidcommon_lib'
 // External child project name
 ext.commonProjectName = ext.commonProjectRoot + ext.commonProjectChild
 
-// Artifact name
-ext.commonArtifactName = 'androidcommon_lib'
+// Demo Artifact name
+ext.commonDemoArtifactName = gradle.ext.flavorDemoPrefix + gradle.ext.commonArchiveSuffix
 
+// Master Artifact name
+ext.commonMasterArtifactName = gradle.ext.flavorMasterPrefix + gradle.ext.commonArchiveSuffix
 
+// Snapshot Artifact name
+ext.commonSnapshotArtifactName = gradle.ext.flavorSnapshotPrefix + gradle.ext.commonArchiveSuffix
+
+// UITest Artifact name
+ext.commonUITestArtifactName = gradle.ext.flavorUITestPrefix + gradle.ext.commonArchiveSuffix
 
 /* -- SENSORS (lib) (SENSORSINTERFACES) -- */
 

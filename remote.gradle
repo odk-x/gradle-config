@@ -14,6 +14,7 @@
 def jacocoURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' + gradle.ext.gradleConfigVersion + '/jacoco.gradle'
 def variablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' + gradle.ext.gradleConfigVersion + '/variables.gradle'
 def runnablesURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' + gradle.ext.gradleConfigVersion + '/runnables.gradle'
+def publishURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' + gradle.ext.gradleConfigVersion + '/publish.gradle'
 
 logger.warn('gradle-config/remote.gradle -- gradle.ext.workspacePath: ' + gradle.ext.workspacePath)
 
@@ -21,10 +22,11 @@ logger.warn('gradle-config/remote.gradle -- gradle.ext.workspacePath: ' + gradle
 def jacocoLocalPath = gradle.ext.workspacePath + '/gradle-config/jacoco.gradle'
 def variablesLocalPath = gradle.ext.workspacePath + '/gradle-config/variables.gradle'
 def runnablesLocalPath = gradle.ext.workspacePath + '/gradle-config/runnables.gradle'
+def publishLocalPath = gradle.ext.workspacePath + '/gradle-config/publish.gradle'
 
 // The scripts to dispatch to each settings.gradle file -- N.B. is one directory level higher than others
 // due to the location of settings.gradle in each project
-ext.settingsScripts = gradle.ext.useLocalPaths ? [variablesLocalPath] : [variablesURL]
+ext.settingsScripts = gradle.ext.useLocalPaths ? [publishLocalPath, variablesLocalPath] : [publishURL, variablesURL]
 
 // The scripts to dispatch to each ODK_lib.gradle file
 ext.libraryScripts = gradle.ext.useLocalPaths ? [jacocoLocalPath,variablesLocalPath,runnablesLocalPath] : [jacocoURL,variablesURL,runnablesURL]

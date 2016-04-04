@@ -1,0 +1,48 @@
+/**************************************************************************************************
+                                        GRADLE PUBLISH PARAMETERS
+ *************************************************************************************************/
+
+/******************************************** Variants *******************************************/
+
+// Demo flavor corresponds to the git demo branch
+gradle.ext.flavorDemoPrefix = 'demo'
+gradle.ext.flavorDemoSuffix = 'Demo'
+
+// Master flavor corresponds to the git master branch
+gradle.ext.flavorMasterPrefix = 'master'
+gradle.ext.flavorMasterSuffix = 'Master'
+
+// Snapshot flavor corresponds to the development branch
+gradle.ext.flavorSnapshotPrefix = 'snapshot'
+gradle.ext.flavorSnapshotSuffix = 'Snapshot'
+
+// UI Test flavor is used for packaging UI tests such as UI Automator tests
+gradle.ext.flavorUITestPrefix = 'uitest'
+gradle.ext.flavorUITestSuffix = 'Uitest'
+
+// Release type corresponds to the release build type, which is publicly distributed
+gradle.ext.typeReleasePrefix = 'release'
+gradle.ext.typeReleaseSuffix = 'Release'
+
+// Debug type corresponds to the debug build type, which includes debug symbols
+gradle.ext.typeDebugPrefix = 'debug'
+gradle.ext.typeDebugSuffix = 'Debug'
+
+/************************************* Default publish behavior **********************************/
+
+gradle.ext.odkPublishConfigName = hasProperty('odkPublishConfigName') ? getProperty('odkPublishConfigName') : gradle.ext.flavorDemoPrefix
+gradle.ext.odkPublishConfig = hasProperty('odkPublishConfig') ? getProperty('odkPublishConfig') : false
+gradle.ext.odkDefaultPublishConfig = gradle.ext.odkPublishConfigName + gradle.ext.typeReleaseSuffix
+
+
+/***************************************** Archive names ****************************************/
+
+/* -- Library -- */
+gradle.ext.libraryArchiveSuffix = 'Androidlibrary'
+gradle.ext.odkLibraryArchiveName = gradle.ext.odkPublishConfigName + gradle.ext.libraryArchiveSuffix
+
+/* -- Common -- */
+gradle.ext.commonArchiveSuffix = 'Androidcommon'
+gradle.ext.odkCommonArchiveName = gradle.ext.odkPublishConfigName + gradle.ext.commonArchiveSuffix
+
+
