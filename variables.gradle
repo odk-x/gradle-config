@@ -59,6 +59,11 @@ ext.packageList =   ['META-INF/DEPENDENCIES',
                     'META-INF/services/javax.ws.rs.ext.MessageBodyReader',
                     'META-INF/services/javax.ws.rs.ext.MessageBodyWriter']
 
+ext.signStoreFilePath = System.getenv("KEYSTORE")
+ext.signStorePass = System.getenv("KEYSTORE_PASSWORD")
+ext.signKeyAlias = System.getenv("KEY_ALIAS")
+ext.signKeyPass = System.getenv("KEY_PASSWORD")
+ext.shouldSign = System.getenv("KEYSTORE") != null
 
 /**************************************************************************************************
                                         VARIANT CLASSIFIERS
