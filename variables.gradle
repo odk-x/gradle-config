@@ -98,6 +98,7 @@ ext.uitestMinSDK = 18
                                           NAMES (libs)
  *************************************************************************************************/
 
+ 
 /* -- LIBRARY -- */
 
 // Path from top-level Gradle script to local version of AndroidLibrary
@@ -153,19 +154,19 @@ ext.commonUITestArtifactName = gradle.ext.flavorUITestPrefix + gradle.ext.common
 /* -- SENSORS (lib) (SENSORSINTERFACES) -- */
 
 // Path from top-level Gradle script to local version of SensorsInterfaces
-ext.sensorsInterfacesProjectPath = new File(gradle.ext.workspacePath + "/sensors/sensorsinterfaces_lib")
+ext.sensorsInterfaceProjectPath = new File(gradle.ext.workspacePath + "/sensorsinterface/sensorsinterfaces_lib")
 
 // Root project name
-ext.sensorsProjectRoot = ':sensors'
+ext.sensorsInterfaceProjectRoot = ':sensorsinterface'
 
 // Child project name
-ext.sensorsInterfacesProjectChild = ':sensorsinterfaces_lib'
+ext.sensorsInterfaceProjectChild = ':sensorsinterfaces_lib'
 
 // External child project name
-ext.sensorsInterfacesProjectName = ext.sensorsProjectRoot + ext.sensorsInterfacesProjectChild
+ext.sensorsInterfaceProjectName = ext.sensorsInterfaceProjectRoot + ext.sensorsInterfaceProjectChild
 
 // Artifact name
-ext.sensorsInterfacesArtifactName = 'sensorsInterfaces_lib'
+ext.sensorsInterfaceArtifactName = 'sensorsInterfaces_lib'
 
 
 /**************************************************************************************************
