@@ -45,4 +45,7 @@ gradle.ext.odkLibraryArchiveName = gradle.ext.odkPublishConfigName + gradle.ext.
 gradle.ext.commonArchiveSuffix = 'Androidcommon'
 gradle.ext.odkCommonArchiveName = gradle.ext.odkPublishConfigName + gradle.ext.commonArchiveSuffix
 
+/* -- SensorsInterface -- */
+gradle.ext.sensorsInterfaceArchiveSuffix = 'Sensorsinterface'
+gradle.ext.odkSensorsInterfaceArchiveName = gradle.ext.odkPublishConfigName + gradle.ext.sensorsInterfaceArchiveSuffix
 

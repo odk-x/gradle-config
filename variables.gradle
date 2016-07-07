@@ -165,8 +165,18 @@ ext.sensorsInterfaceProjectChild = ':sensorsinterfaces_lib'
 // External child project name
 ext.sensorsInterfaceProjectName = ext.sensorsInterfaceProjectRoot + ext.sensorsInterfaceProjectChild
 
-// Artifact name
-ext.sensorsInterfaceArtifactName = 'sensorsInterfaces_lib'
+// Demo Artifact name
+ext.sensorsInterfaceDemoArtifactName = gradle.ext.flavorDemoPrefix + gradle.ext.sensorsInterfaceArchiveSuffix
+
+// Master Artifact name
+ext.sensorsInterfaceMasterArtifactName = gradle.ext.flavorMasterPrefix + gradle.ext.sensorsInterfaceArchiveSuffix
+
+// Snapshot Artifact name
+ext.sensorsInterfaceSnapshotArtifactName = gradle.ext.flavorSnapshotPrefix + gradle.ext.sensorsInterfaceArchiveSuffix
+
+// UITest Artifact name
+ext.sensorsInterfaceUITestArtifactName = gradle.ext.flavorUITestPrefix + gradle.ext.sensorsInterfaceArchiveSuffix
+
 
 
 /**************************************************************************************************
@@ -198,10 +208,10 @@ ext.syncName = '.sync'
 ext.tablesProjectChild = ':tables_app'
 ext.tablesName = '.tables'
 
-/* -- SENSORS (app) (SENSORSFRAMEWORK) -- */
+/* -- SENSORS FRAMEWORK (app)  -- */
 
 ext.sensorsFrameworkProjectChild = ':sensorsframework_app'
-ext.sensorsFrameworkName = '.sensors'
+ext.sensorsFrameworkName = '.sensorsframework'
 
 /* -- Collect-- */
 
