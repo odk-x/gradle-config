@@ -151,16 +151,16 @@ ext.commonSnapshotArtifactName = gradle.ext.flavorSnapshotPrefix + gradle.ext.co
 // UITest Artifact name
 ext.commonUITestArtifactName = gradle.ext.flavorUITestPrefix + gradle.ext.commonArchiveSuffix
 
-/* -- SENSORS (lib) (SENSORSINTERFACES) -- */
+/* -- SENSORS (lib) (SENSORSINTERFACE) -- */
 
-// Path from top-level Gradle script to local version of SensorsInterfaces
-ext.sensorsInterfaceProjectPath = new File(gradle.ext.workspacePath + "/sensorsinterface/sensorsinterfaces_lib")
+// Path from top-level Gradle script to local version of SensorsInterface
+ext.sensorsInterfaceProjectPath = new File(gradle.ext.workspacePath + "/sensorsinterface/sensorsinterface_lib")
 
 // Root project name
 ext.sensorsInterfaceProjectRoot = ':sensorsinterface'
 
 // Child project name
-ext.sensorsInterfaceProjectChild = ':sensorsinterfaces_lib'
+ext.sensorsInterfaceProjectChild = ':sensorsinterface_lib'
 
 // External child project name
 ext.sensorsInterfaceProjectName = ext.sensorsInterfaceProjectRoot + ext.sensorsInterfaceProjectChild
