@@ -2,7 +2,7 @@
 
 import os, sys
 
-TOOLS = ["services", "scan", "sensors", "survey", "tables", "androidlibrary", "androidcommon"]
+TOOLS = ["services", "scan", "sensorsinterface", "sensorsframework", "survey", "tables", "androidlibrary", "androidcommon"]
 VER_TEXT = "gradle.ext.gradleConfigVersion = "
 
 # Get the new verison number
