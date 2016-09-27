@@ -196,7 +196,7 @@ ext.scanName = '.scan'
 /* -- SURVEY -- */
 
 ext.surveyProjectChild = ':survey_app'
-ext.surveyName = '.survey.android'
+ext.surveyName = '.survey'
 
 /* -- SYNC -- */
 
