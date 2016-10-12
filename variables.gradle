@@ -211,7 +211,7 @@ ext.tablesName = '.tables'
 /* -- SENSORS FRAMEWORK (app)  -- */
 
 ext.sensorsFrameworkProjectChild = ':sensorsframework_app'
-ext.sensorsFrameworkName = '.sensorsframework'
+ext.sensorsFrameworkName = '.sensors'
 
 /* -- Collect-- */
 
