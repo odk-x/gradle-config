@@ -23,15 +23,15 @@ ext.groupId = 'org.opendatakit' // ApplicationID is groupId + appName
 ext.releaseVersionCode = 210
 ext.inProgressVersionCode = 'a'
 ext.versionCodeName = '2.0 rev ' + ext.releaseVersionCode + ext.inProgressVersionCode
-ext.masterArtifactVersion = 'rev208'
+ext.masterArtifactVersion = 'rev210'
 
 // SDK versions
-ext.compileVersion = 22
+ext.compileVersion = 25
 ext.minVersion = 16
 ext.targetVersion = 19
 
 // Build tools
-ext.buildTools = "23.0.3"
+ext.buildTools = "25.0.2"
 
 // Java version
 ext.javaVersion = JavaVersion.VERSION_1_7
@@ -40,7 +40,7 @@ ext.javaVersion = JavaVersion.VERSION_1_7
 ext.latestVersion = 'latest.integration'
 
 // Google Play Services version
-ext.gpsVersion = "6.5.87"
+ext.gpsVersion = "10.0.1"
 
 /**************************************************************************************************
                                         GLOBAL VARIABLES
