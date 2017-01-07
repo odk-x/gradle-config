@@ -40,7 +40,7 @@ ext.javaVersion = JavaVersion.VERSION_1_7
 ext.latestVersion = 'latest.integration'
 
 // Google Play Services version
-ext.gpsVersion = "10.0.1"
+ext.gpsVersion = "8.4.0"
 
 /**************************************************************************************************
                                         GLOBAL VARIABLES
