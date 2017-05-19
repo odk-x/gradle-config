@@ -118,11 +118,16 @@ task generateSnapshotVersion {
 }
 
 // Set the version to release (required by Artifactory)
-task releaseVersion << {
-    version = releaseVersionCode
+task releaseVersion {
+	doLast {
+		version = releaseVersionCode
+	}
 }
 
 // Set the version to snapshot (required by Artifactory)
-task snapshotVersion(dependsOn: "generateSnapshotVersion") << {
-    version = snapshotVersionCode
+task snapshotVersion(dependsOn: "generateSnapshotVersion") {
+	doLast {
+		// snapshotVersionCode is set by a doLast in generateSnapshotVersion code
+		version = snapshotVersionCode
+	}
 }
