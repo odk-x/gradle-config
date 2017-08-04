@@ -27,11 +27,11 @@ ext.masterArtifactVersion = 'rev210'
 
 // SDK versions
 ext.compileVersion = 25
-ext.minVersion = 16
+ext.minVersion = 17
 ext.targetVersion = 19
 
 // Build tools
-ext.buildTools = "25.0.3"
+ext.buildTools = "26.0.1"
 
 // Java version
 ext.javaVersion = JavaVersion.VERSION_1_7
