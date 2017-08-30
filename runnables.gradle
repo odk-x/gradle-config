@@ -58,7 +58,7 @@ def listTests() {
     // Return list of file locations
     return testFiles;
  }
-
+ 
 /**************************************************************************************************
                                             TASKS
  *************************************************************************************************/
@@ -130,4 +130,29 @@ task snapshotVersion(dependsOn: "generateSnapshotVersion") {
 		// snapshotVersionCode is set by a doLast in generateSnapshotVersion code
 		version = snapshotVersionCode
 	}
+}
+
+// copy the analytics files (if present)
+task analytics {
+	doFirst {
+		def projDirectory = new File("${project.projectDir}");
+		def parentProjDir = projDirectory.getParentFile();
+		def dirLoc = parentProjDir.getAbsolutePath() + "/odkanalytics"
+		println dirLoc
+		if(file(dirLoc).exists() ) {
+			new File(dirLoc).eachFile() { 
+				file -> println file.absolutePath
+					def newFile = "${project.projectDir}/" + file.getName() 
+					println newFile 
+					new File(newFile).text = file.text
+				 
+			}
+		}	
+	}
+}
+
+tasks.whenTaskAdded { task ->
+    if (task.name.startsWith('compile')) {
+        task.dependsOn analytics
+    }
 }
