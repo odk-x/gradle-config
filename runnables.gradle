@@ -147,6 +147,11 @@ task analytics {
 					new File(newFile).text = file.text
 				 
 			}
+		} else {
+			def fakePropertiesFile = "${project.projectDir}/fabric.properties"
+			if(!(file(fakePropertiesFile).exists())) {
+				new File(fakePropertiesFile) << "apiKey=testkey"
+			}
 		}	
 	}
 }
