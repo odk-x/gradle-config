@@ -26,12 +26,12 @@ ext.versionCodeName = '2.0.2 rev ' + ext.releaseVersionCode + ext.inProgressVers
 ext.masterArtifactVersion = 'rev216'
 
 // SDK versions
-ext.compileVersion = 25
+ext.compileVersion = 26
 ext.minVersion = 17
 ext.targetVersion = 23
 
 // Build tools
-ext.buildTools = "26.0.1"
+ext.buildTools = "27.0.1"
 
 // Java version
 ext.javaVersion = JavaVersion.VERSION_1_7
