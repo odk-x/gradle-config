@@ -5,15 +5,15 @@
 /******************************************** Variants *******************************************/
 
 // Demo flavor corresponds to the git demo branch
-gradle.ext.flavorDemoPrefix = 'demo'
+gradle.ext.flavorDemoPrefix = 'demoBasic'
 gradle.ext.flavorDemoSuffix = 'Demo'
 
 // Master flavor corresponds to the git master branch
-gradle.ext.flavorMasterPrefix = 'master'
+gradle.ext.flavorMasterPrefix = 'masterBasic'
 gradle.ext.flavorMasterSuffix = 'Master'
 
 // Snapshot flavor corresponds to the development branch
-gradle.ext.flavorSnapshotPrefix = 'snapshot'
+gradle.ext.flavorSnapshotPrefix = 'snapshotBasic'
 gradle.ext.flavorSnapshotSuffix = 'Snapshot'
 
 // UI Test flavor is used for packaging UI tests such as UI Automator tests

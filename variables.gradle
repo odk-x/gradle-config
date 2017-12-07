@@ -122,8 +122,6 @@ ext.libraryMasterArtifactName = gradle.ext.flavorMasterPrefix + gradle.ext.libra
 // Snapshot Artifact name
 ext.librarySnapshotArtifactName = gradle.ext.flavorSnapshotPrefix + gradle.ext.libraryArchiveSuffix
 
-// UITest Artifact name
-ext.libraryUITestArtifactName = gradle.ext.flavorUITestPrefix + gradle.ext.libraryArchiveSuffix
 
 /* -- COMMON -- */
 
@@ -148,8 +146,6 @@ ext.commonMasterArtifactName = gradle.ext.flavorMasterPrefix + gradle.ext.common
 // Snapshot Artifact name
 ext.commonSnapshotArtifactName = gradle.ext.flavorSnapshotPrefix + gradle.ext.commonArchiveSuffix
 
-// UITest Artifact name
-ext.commonUITestArtifactName = gradle.ext.flavorUITestPrefix + gradle.ext.commonArchiveSuffix
 
 /* -- SENSORS (lib) (SENSORSINTERFACE) -- */
 
@@ -173,10 +169,6 @@ ext.sensorsInterfaceMasterArtifactName = gradle.ext.flavorMasterPrefix + gradle.
 
 // Snapshot Artifact name
 ext.sensorsInterfaceSnapshotArtifactName = gradle.ext.flavorSnapshotPrefix + gradle.ext.sensorsInterfaceArchiveSuffix
-
-// UITest Artifact name
-ext.sensorsInterfaceUITestArtifactName = gradle.ext.flavorUITestPrefix + gradle.ext.sensorsInterfaceArchiveSuffix
-
 
 
 /**************************************************************************************************
