@@ -26,12 +26,12 @@ ext.versionCodeName = '2.0.2 rev ' + ext.releaseVersionCode + ext.inProgressVers
 ext.masterArtifactVersion = 'rev216'
 
 // SDK versions
-ext.compileVersion = 26
+ext.compileVersion = 27
 ext.minVersion = 17
 ext.targetVersion = 23
 
 // Build tools
-ext.buildTools = "27.0.1"
+ext.buildTools = "27.0.2"
 
 // Java version
 ext.javaVersion = JavaVersion.VERSION_1_7
@@ -78,8 +78,6 @@ ext.masterDebug = gradle.ext.flavorMasterPrefix + gradle.ext.typeDebugSuffix
 ext.snapshotRelease = gradle.ext.flavorSnapshotPrefix + gradle.ext.typeReleaseSuffix
 ext.snapshotDebug = gradle.ext.flavorSnapshotPrefix + gradle.ext.typeDebugSuffix
 
-ext.uitestRelease = gradle.ext.flavorUITestPrefix + gradle.ext.typeReleaseSuffix
-ext.uitestDebug = gradle.ext.flavorUITestPrefix + gradle.ext.typeDebugSuffix
 
 /**************************************************************************************************
                                              TEST
@@ -103,6 +101,9 @@ ext.uitestMinSDK = 18
 
 // Path from top-level Gradle script to local version of AndroidLibrary
 ext.libraryProjectPath = new File(gradle.ext.workspacePath + "/androidlibrary/androidlibrary_lib")
+
+// Path for subproject directory
+ext.librarySubProjectDictory = new File('androidlibrary')
 
 // Root project name
 ext.libraryProjectRoot = ':androidlibrary'
@@ -128,6 +129,9 @@ ext.librarySnapshotArtifactName = gradle.ext.flavorSnapshotPrefix + gradle.ext.l
 // Path from top-level Gradle script to local version of AndroidCommon
 ext.commonProjectPath = new File(gradle.ext.workspacePath + "/androidcommon/androidcommon_lib")
 
+// Path for subproject directory
+ext.commonSubProjectDictory = new File('androidcommon')
+
 // Root project name
 ext.commonProjectRoot = ':androidcommon'
 
@@ -151,6 +155,9 @@ ext.commonSnapshotArtifactName = gradle.ext.flavorSnapshotPrefix + gradle.ext.co
 
 // Path from top-level Gradle script to local version of SensorsInterface
 ext.sensorsInterfaceProjectPath = new File(gradle.ext.workspacePath + "/sensorsinterface/sensorsinterface_lib")
+
+// Path for subproject directory
+ext.sensorsInterfaceSubProjectDictory = new File('sensorsinterface')
 
 // Root project name
 ext.sensorsInterfaceProjectRoot = ':sensorsinterface'
@@ -204,8 +211,3 @@ ext.tablesName = '.tables'
 
 ext.sensorsFrameworkProjectChild = ':sensorsframework_app'
 ext.sensorsFrameworkName = '.sensors'
-
-/* -- Collect-- */
-
-ext.collectProjectChild = ':collect_app'
-ext.collectName = '.collect'
