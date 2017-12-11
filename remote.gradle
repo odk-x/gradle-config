@@ -7,8 +7,7 @@
 *
 *	This Gradle script handles dispatching various ODK Project buildscripts to where the common
 *	logic is stored.
-*/
-
+*/ 
 
 // Remote Paths
 def jacocoURL = 'https://raw.githubusercontent.com/opendatakit/gradle-config/' + gradle.ext.gradleConfigVersion + '/jacoco.gradle'
