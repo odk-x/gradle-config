@@ -23,7 +23,7 @@ ext.groupId = 'org.opendatakit' // ApplicationID is groupId + appName
 ext.releaseVersionCode = 218
 ext.inProgressVersionCode = ''
 ext.versionCodeName = '2.0.2 rev ' + ext.releaseVersionCode + ext.inProgressVersionCode
-ext.masterArtifactVersion = 'rev216'
+ext.masterArtifactVersion = 'rev218'
 
 // SDK versions
 ext.compileVersion = 27
