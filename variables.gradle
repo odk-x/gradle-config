@@ -31,16 +31,13 @@ ext.minVersion = 17
 ext.targetVersion = 23
 
 // Build tools
-ext.buildTools = "27.0.2"
+ext.buildTools = "27.0.3"
 
 // Java version
 ext.javaVersion = JavaVersion.VERSION_1_7
 
 // Grab the latest binary version from the server
 ext.latestVersion = 'latest.integration'
-
-// Google Play Services version
-ext.gpsVersion = "8.4.0"
 
 /**************************************************************************************************
                                         GLOBAL VARIABLES
