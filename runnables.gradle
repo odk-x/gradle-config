@@ -50,16 +50,12 @@ task analytics {
 	doFirst {
 		def projDirectory = new File("${project.projectDir}");
 		def parentProjDir = projDirectory.getParentFile();
-		def dirLoc = parentProjDir.getAbsolutePath() + "/odkanalytics"
-		println dirLoc
-		if(file(dirLoc).exists() ) {
-			new File(dirLoc).eachFile() { 
-				file -> println file.absolutePath
-					def newFile = "${project.projectDir}/" + file.getName() 
-					println newFile 
-					new File(newFile).text = file.text
-				 
-			}
+		def fabricProperties = parentProjDir.getAbsolutePath() + "/odkanalytics/fabric.properties"
+		def fabricFile = file(fabricProperties);
+		if(fabricFile.exists() ) {
+			def newFile = "${project.projectDir}/" + fabricFile.getName() 
+			println newFile 
+			new File(newFile).text = fabricFile.text
 		} else {
 			def fakePropertiesFile = "${project.projectDir}/fabric.properties"
 			if(!(file(fakePropertiesFile).exists())) {
