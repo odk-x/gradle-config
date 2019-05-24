@@ -21,7 +21,7 @@ logger.warn('gradle-config/variables.gradle -- gradle.ext.workspacePath: ' + gra
 // ODK Application versions
 ext.groupId = 'org.opendatakit' // ApplicationID is groupId + appName
 ext.releaseVersionCode = 232
-ext.inProgressVersionCode = 'a'
+ext.inProgressVersionCode = ''
 ext.versionCodeName = '2.1.3 rev ' + ext.releaseVersionCode + ext.inProgressVersionCode
 ext.masterArtifactVersion = 'rev230'
 
@@ -179,7 +179,7 @@ ext.sensorsInterfaceSnapshotArtifactName = gradle.ext.flavorSnapshotPrefix + gra
                                           NAMES (apps)
  *************************************************************************************************/
 
-/* -- Services -- */
+/* -- SERVICES -- */
 
 ext.servicesProjectChild = ':services_app'
 ext.servicesName = '.services'
@@ -194,17 +194,17 @@ ext.scanName = '.scan'
 ext.surveyProjectChild = ':survey_app'
 ext.surveyName = '.survey'
 
-/* -- SYNC -- */
-
-ext.syncProjectChild = ':sync_app'
-ext.syncName = '.sync'
-
 /* -- TABLES -- */
 
 ext.tablesProjectChild = ':tables_app'
 ext.tablesName = '.tables'
 
-/* -- SENSORS FRAMEWORK (app)  -- */
+/* -- SENSORS FRAMEWORK  -- */
 
 ext.sensorsFrameworkProjectChild = ':sensorsframework_app'
 ext.sensorsFrameworkName = '.sensors'
+
+/* -- SUBMIT  -- */
+
+ext.submitProjectChild = ':submit_app'
+ext.submitName = '.submit'
