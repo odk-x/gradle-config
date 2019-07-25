@@ -21,7 +21,7 @@ logger.warn('gradle-config/variables.gradle -- gradle.ext.workspacePath: ' + gra
 // ODK Application versions
 ext.groupId = 'org.opendatakit' // ApplicationID is groupId + appName
 ext.releaseVersionCode = 234
-ext.inProgressVersionCode = 'a'
+ext.inProgressVersionCode = 'b'
 ext.versionCodeName = '2.1.4 rev ' + ext.releaseVersionCode + ext.inProgressVersionCode
 ext.masterArtifactVersion = 'rev232'
 
@@ -31,7 +31,7 @@ ext.minVersion = 17
 ext.targetVersion = 26
 
 // Build tools
-ext.buildTools = "28.0.3"
+ext.buildTools = "29.0.1"
 
 // Java version
 ext.javaVersion = JavaVersion.VERSION_1_7
@@ -83,7 +83,7 @@ ext.snapshotDebug = gradle.ext.flavorSnapshotPrefix + gradle.ext.typeDebugSuffix
 ext.testNameSuffix = ".test"
 
 // Instrumentation runner to register
-ext.instrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+ext.instrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
 // Min SDK for UI Automator testing
 ext.uitestMinSDK = 18
