@@ -2,11 +2,6 @@
 // and grant services write external storage permission
 // **IMPORTANT** EVERY ODK2 APP MUST IMPLEMENT A "grantPermissionForODKApp" task
 
-task grantTablesAnimationPermission(type: Exec) {
-    commandLine "adb shell pm grant org.opendatakit.tables android.permission.SET_ANIMATION_SCALE"
-            .split(' ')
-}
-
 task grantServicesReadExternalStoragePermission(type: Exec) {
     commandLine "adb shell pm grant org.opendatakit.services android.permission.READ_EXTERNAL_STORAGE"
             .split(' ')
@@ -15,27 +10,22 @@ task grantServicesReadExternalStoragePermission(type: Exec) {
 task grantServicesWriteExternalStoragePermission(type: Exec) {
     commandLine "adb shell pm grant org.opendatakit.services android.permission.WRITE_EXTERNAL_STORAGE"
             .split(' ')
+
 }
 
 task setupUitestsForDemo {
 	mustRunAfter 'installDemoUitestDebug'
-    doLast {
-        grantPermissionForODKApp
-    }
+	dependsOn 'grantPermissionForODKApp'
 }
 
 task setupUitestsForMaster {
 	mustRunAfter 'installMasterUitestDebug'
-    doLast {
-        grantPermissionForODKApp
-    }
+	dependsOn 'grantPermissionForODKApp'
 }
 
 task setupUitestsForSnaphot  {
 	mustRunAfter 'installSnapshotUitestDebug'
-    doLast {
-        grantPermissionForODKApp
-    }
+    dependsOn 'grantPermissionForODKApp'
 }
 
 tasks.whenTaskAdded { task ->
