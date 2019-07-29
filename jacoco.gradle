@@ -1,4 +1,4 @@
-ext.jacocoVersionName = '0.7.6.201602180812'
+ext.jacocoVersionName = '0.8.4'
 
 apply plugin: 'jacoco'
 

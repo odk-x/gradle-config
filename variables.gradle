@@ -34,7 +34,7 @@ ext.targetVersion = 28
 ext.buildTools = "29.0.1"
 
 // Java version
-ext.javaVersion = JavaVersion.VERSION_1_7
+ext.javaVersion = JavaVersion.VERSION_1_8
 
 // Grab the latest binary version from the server
 ext.latestVersion = 'latest.integration'
