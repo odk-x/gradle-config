@@ -27,7 +27,7 @@ ext.masterArtifactVersion = 'rev232'
 
 // SDK versions
 ext.compileVersion = 28
-ext.minVersion = 17
+ext.minVersion = 19
 ext.targetVersion = 28
 
 // Build tools
@@ -86,7 +86,7 @@ ext.testNameSuffix = ".test"
 ext.instrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
 // Min SDK for UI Automator testing
-ext.uitestMinSDK = 18
+ext.uitestMinSDK = 19
 
 
 /**************************************************************************************************
