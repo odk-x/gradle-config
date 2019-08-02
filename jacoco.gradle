@@ -1,11 +1,7 @@
-ext.jacocoVersionName = '0.8.4'
+ext.jacocoVersionName = '0.7.6.201602180812'
 
 apply plugin: 'jacoco'
 
 jacoco {
     toolVersion = jacocoVersionName
-}
-
-tasks.withType(Test) {
-    jacoco.includeNoLocationClasses = true
 }
