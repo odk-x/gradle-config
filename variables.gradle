@@ -21,7 +21,7 @@ logger.warn('gradle-config/variables.gradle -- gradle.ext.workspacePath: ' + gra
 // ODK Application versions
 ext.groupId = 'org.opendatakit' // ApplicationID is groupId + appName
 ext.releaseVersionCode = 238
-ext.inProgressVersionCode = 'b'
+ext.inProgressVersionCode = ''
 ext.versionCodeName = '2.1.6 rev ' + ext.releaseVersionCode + ext.inProgressVersionCode
 ext.masterArtifactVersion = 'rev236'
 
