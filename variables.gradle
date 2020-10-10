@@ -31,7 +31,7 @@ ext.minVersion = 19
 ext.targetVersion = 28
 
 // Build tools
-ext.buildTools = "29.0.2"
+ext.buildTools = "30.0.2"
 
 // Java version
 ext.javaVersion = JavaVersion.VERSION_1_8
