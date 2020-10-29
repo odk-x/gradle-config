@@ -26,9 +26,9 @@ ext.versionCodeName = '2.1.7 rev ' + ext.releaseVersionCode + ext.inProgressVers
 ext.masterArtifactVersion = 'rev238'
 
 // SDK versions
-ext.compileVersion = 28
+ext.compileVersion = 30
 ext.minVersion = 19
-ext.targetVersion = 28
+ext.targetVersion = 30
 
 // Build tools
 ext.buildTools = "30.0.2"
