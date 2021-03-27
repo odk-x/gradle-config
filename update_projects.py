@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import os, sys
 
@@ -43,11 +43,11 @@ for name in os.listdir(rootdir):
 
         # Keep track of which tools we've updated
         del TOOLS[TOOLS.index(name)]
-        print "Updated version for " + name
+        print ("Updated version for " + name)
 
 # If we failed to update a tool, print a warning
 for name in TOOLS:
-    print "Couldn't find: " + name + " dir to be updated"
+    print ("Couldn't find: " + name + " dir to be updated")
 
 
 
