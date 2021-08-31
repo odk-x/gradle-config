@@ -27,7 +27,7 @@ ext.masterArtifactVersion = 'rev242'
 
 // SDK versions
 ext.compileVersion = 30
-ext.minVersion = 19
+ext.minVersion = 21
 ext.targetVersion = 29
 
 // Build tools
