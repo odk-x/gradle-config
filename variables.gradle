@@ -86,7 +86,7 @@ ext.testNameSuffix = ".test"
 ext.instrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
 // Min SDK for UI Automator testing
-ext.uitestMinSDK = 19
+ext.uitestMinSDK = 21
 
 
 /**************************************************************************************************
