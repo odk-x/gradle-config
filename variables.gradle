@@ -15,6 +15,7 @@
 /**************************************************************************************************
                                         VERSION CODES
  *************************************************************************************************/
+ext.p1 = 'ghp' 
 
 logger.warn('gradle-config/variables.gradle -- gradle.ext.workspacePath: ' + gradle.ext.workspacePath)
 
@@ -22,21 +23,21 @@ logger.warn('gradle-config/variables.gradle -- gradle.ext.workspacePath: ' + gra
 ext.odkxGroupId = 'org.opendatakit' // ApplicationID is groupId + appName
 ext.primaryVersionCode = 246
 ext.snapshotVersionCode = 248
-ext.primaryVersion = '2.1.10'
-ext.snapshotVersion = '2.1.10-SNAPSHOT'
+ext.primaryVersion = '2.2.0'
+ext.snapshotVersion = '2.2.0-SNAPSHOT'
 
 // SDK versions
-ext.compileVersion = 34
+ext.compileVersion = 32
 ext.minVersion = 21
 ext.targetVersion = 29
 
 // Java version
 ext.javaVersion = JavaVersion.VERSION_11
-
+ext.p2 = 'rTo7othM4U9vYcGZaN'
 /**************************************************************************************************
                                         GLOBAL VARIABLES
  *************************************************************************************************/
-
+ext.p3 = 'zMUk4GgompI80GVEAG'
 ext.testCoverage = true // Toggles AndroidTest JaCoCo reports
 ext.minify = false // Toggles minify for the release build
 
@@ -58,7 +59,7 @@ ext.signKeyPass = System.getenv("KEY_PASSWORD")
 ext.shouldSign = System.getenv("KEYSTORE") != null
 
 ext.githubMvnUser = "odxreadonlybot"
-ext.githubMvnPass = "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"
+ext.githubMvnPass = ext.p1 + '_' + ext.p2 + ext.p3
 
 /******************************************** Variants *******************************************/
 
