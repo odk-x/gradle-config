@@ -1,6 +1,6 @@
 // These are used to disable animations when running UI tests
 // and grant services write external storage permission
-// **IMPORTANT** EVERY ODK2 APP MUST IMPLEMENT A "grantPermissionForODKApp" task
+// **IMPORTANT** EVERY ODK-X APP MUST IMPLEMENT A "grantPermissionForODKXApp" task
 
 task grantServicesReadExternalStoragePermission(type: Exec) {
     commandLine "adb shell pm grant org.opendatakit.services android.permission.READ_EXTERNAL_STORAGE"
@@ -13,29 +13,22 @@ task grantServicesWriteExternalStoragePermission(type: Exec) {
 
 }
 
-task setupUitestsForDemo {
-	mustRunAfter 'installDemoUitestDebug'
-	dependsOn 'grantPermissionForODKApp'
+task setupUiTestsForPrimary {
+	mustRunAfter 'installPrimaryDebug'
+	dependsOn 'grantPermissionForODKXApp'
 }
 
-task setupUitestsForMaster {
-	mustRunAfter 'installMasterUitestDebug'
-	dependsOn 'grantPermissionForODKApp'
-}
-
-task setupUitestsForSnaphot  {
-	mustRunAfter 'installSnapshotUitestDebug'
-    dependsOn 'grantPermissionForODKApp'
+task setupUiTestsForSnaphot  {
+	mustRunAfter 'installSnapshotDebug'
+    dependsOn 'grantPermissionForODKXApp'
 }
 
 tasks.whenTaskAdded { task ->
     if (task.name.startsWith('connected') && task.name.endsWith('DebugAndroidTest')) {
-        if(task.name.contentEquals("connectedDemoUitestDebugAndroidTest")) {
-            task.dependsOn setupUitestsForDemo
-        } else if (task.name.contentEquals("connectedMasterUitestDebugAndroidTest")) {
-            task.dependsOn setupUitestsForMaster
-        } else if (task.name.contentEquals("connectedSnapshotUitestDebugAndroidTest")) {
-            task.dependsOn setupUitestsForSnaphot
+        if(task.name.contentEquals("connectedPrimaryDebugAndroidTest")) {
+            task.dependsOn setupUiTestsForPrimary
+        } else if (task.name.contentEquals("connectedSnapshotDebugAndroidTest")) {
+            task.dependsOn setupUiTestsForSnaphot
         }
     }
 }

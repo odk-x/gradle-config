@@ -1,0 +1,35 @@
+/**************************************************************************************************
+                                        ODK-X GITHUB REPOSITORY DECLARATIONS
+ *************************************************************************************************/
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            name = "ODKXSyncEndpointGithubPackages"
+            url = "https://maven.pkg.github.com/odk-x/sync-endpoint"
+            credentials {
+                username = githubMvnUser
+                password = githubMvnPass
+            }
+        }
+	    maven {
+            name = "ODKXAndroidLibary"
+            url = "https://maven.pkg.github.com/odk-x/androidlibrary"
+            credentials {
+				username = githubMvnUser
+                password = githubMvnPass
+            }
+        }
+		maven {
+            name = "ODKXAndroidCommon"
+            url = "https://maven.pkg.github.com/odk-x/androidcommon"
+            credentials {
+				username = githubMvnUser
+                password = githubMvnPass
+            }
+        }
+    }
+}
+
+

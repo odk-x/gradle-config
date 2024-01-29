@@ -18,26 +18,20 @@
 
 logger.warn('gradle-config/variables.gradle -- gradle.ext.workspacePath: ' + gradle.ext.workspacePath)
 
-// ODK Application versions
-ext.groupId = 'org.opendatakit' // ApplicationID is groupId + appName
-ext.releaseVersionCode = 246
-ext.inProgressVersionCode = ''
-ext.versionCodeName = '2.1.10 rev ' + ext.releaseVersionCode + ext.inProgressVersionCode
-ext.masterArtifactVersion = 'rev244'
+// ODK-X Application versions
+ext.odkxGroupId = 'org.opendatakit' // ApplicationID is groupId + appName
+ext.primaryVersionCode = 246
+ext.snapshotVersionCode = 248
+ext.primaryVersion = '2.1.10'
+ext.snapshotVersion = '2.1.10-SNAPSHOT'
 
 // SDK versions
-ext.compileVersion = 30
+ext.compileVersion = 34
 ext.minVersion = 21
 ext.targetVersion = 29
 
-// Build tools
-ext.buildTools = "30.0.3"
-
 // Java version
-ext.javaVersion = JavaVersion.VERSION_1_8
-
-// Grab the latest binary version from the server
-ext.latestVersion = 'latest.integration'
+ext.javaVersion = JavaVersion.VERSION_11
 
 /**************************************************************************************************
                                         GLOBAL VARIABLES
@@ -63,14 +57,32 @@ ext.signKeyAlias = System.getenv("KEY_ALIAS")
 ext.signKeyPass = System.getenv("KEY_PASSWORD")
 ext.shouldSign = System.getenv("KEYSTORE") != null
 
+ext.githubMvnUser = "odxreadonlybot"
+ext.githubMvnPass = "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"
+
+/******************************************** Variants *******************************************/
+
+// Primary flavor corresponds to the git main branch
+gradle.ext.flavorPrimaryPrefix = 'primary'
+gradle.ext.flavorPrimarySuffix = 'Primary'
+
+// Snapshot flavor corresponds to the development branch
+gradle.ext.flavorSnapshotPrefix = 'snapshot'
+gradle.ext.flavorSnapshotSuffix = 'Snapshot'
+
+// Release type corresponds to the release build type, which is publicly distributed
+gradle.ext.typeReleasePrefix = 'release'
+gradle.ext.typeReleaseSuffix = 'Release'
+
+// Debug type corresponds to the debug build type, which includes debug symbols
+gradle.ext.typeDebugPrefix = 'debug'
+gradle.ext.typeDebugSuffix = 'Debug'
+
 /**************************************************************************************************
                                         VARIANT CLASSIFIERS
  *************************************************************************************************/
-ext.demoRelease = gradle.ext.flavorDemoPrefix + gradle.ext.typeReleaseSuffix
-ext.demoDebug = gradle.ext.flavorDemoPrefix + gradle.ext.typeDebugSuffix
-
-ext.masterRelease = gradle.ext.flavorMasterPrefix + gradle.ext.typeReleaseSuffix
-ext.masterDebug = gradle.ext.flavorMasterPrefix + gradle.ext.typeDebugSuffix
+ext.primaryRelease = gradle.ext.flavorPrimaryPrefix + gradle.ext.typeReleaseSuffix
+ext.primaryDebug = gradle.ext.flavorPrimaryPrefix + gradle.ext.typeDebugSuffix
 
 ext.snapshotRelease = gradle.ext.flavorSnapshotPrefix + gradle.ext.typeReleaseSuffix
 ext.snapshotDebug = gradle.ext.flavorSnapshotPrefix + gradle.ext.typeDebugSuffix
@@ -85,9 +97,6 @@ ext.testNameSuffix = ".test"
 // Instrumentation runner to register
 ext.instrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-// Min SDK for UI Automator testing
-ext.uitestMinSDK = 21
-
 
 /**************************************************************************************************
                                           NAMES (libs)
@@ -95,6 +104,10 @@ ext.uitestMinSDK = 21
 
  
 /* -- LIBRARY -- */
+
+ext.libraryPackageName = 'androidlibrary'
+
+ext.libraryNamespace = ext.odkxGroupId + "." + ext.libraryPackageName
 
 // Path from top-level Gradle script to local version of AndroidLibrary
 ext.libraryProjectPath = new File(gradle.ext.workspacePath + "/androidlibrary/androidlibrary_lib")
@@ -111,17 +124,12 @@ ext.libraryProjectChild = ':androidlibrary_lib'
 // External child project name
 ext.libraryProjectName = ext.libraryProjectRoot + ext.libraryProjectChild
 
-// Demo Artifact name
-ext.libraryDemoArtifactName = gradle.ext.flavorDemoPrefix + gradle.ext.libraryArchiveSuffix
-
-// Master Artifact name
-ext.libraryMasterArtifactName = gradle.ext.flavorMasterPrefix + gradle.ext.libraryArchiveSuffix
-
-// Snapshot Artifact name
-ext.librarySnapshotArtifactName = gradle.ext.flavorSnapshotPrefix + gradle.ext.libraryArchiveSuffix
-
 
 /* -- COMMON -- */
+
+ext.commonPackageName = 'androidcommon'
+
+ext.commonNamespace = ext.odkxGroupId + "." + ext.commonPackageName
 
 // Path from top-level Gradle script to local version of AndroidCommon
 ext.commonProjectPath = new File(gradle.ext.workspacePath + "/androidcommon/androidcommon_lib")
@@ -138,17 +146,8 @@ ext.commonProjectChild = ':androidcommon_lib'
 // External child project name
 ext.commonProjectName = ext.commonProjectRoot + ext.commonProjectChild
 
-// Demo Artifact name
-ext.commonDemoArtifactName = gradle.ext.flavorDemoPrefix + gradle.ext.commonArchiveSuffix
-
-// Master Artifact name
-ext.commonMasterArtifactName = gradle.ext.flavorMasterPrefix + gradle.ext.commonArchiveSuffix
-
-// Snapshot Artifact name
-ext.commonSnapshotArtifactName = gradle.ext.flavorSnapshotPrefix + gradle.ext.commonArchiveSuffix
-
-
 /* -- SENSORS (lib) (SENSORSINTERFACE) -- */
+ext.sensorsInterfacePackageName = '.sensorsinterface'
 
 // Path from top-level Gradle script to local version of SensorsInterface
 ext.sensorsInterfaceProjectPath = new File(gradle.ext.workspacePath + "/sensorsinterface/sensorsinterface_lib")
@@ -165,46 +164,45 @@ ext.sensorsInterfaceProjectChild = ':sensorsinterface_lib'
 // External child project name
 ext.sensorsInterfaceProjectName = ext.sensorsInterfaceProjectRoot + ext.sensorsInterfaceProjectChild
 
-// Demo Artifact name
-ext.sensorsInterfaceDemoArtifactName = gradle.ext.flavorDemoPrefix + gradle.ext.sensorsInterfaceArchiveSuffix
-
-// Master Artifact name
-ext.sensorsInterfaceMasterArtifactName = gradle.ext.flavorMasterPrefix + gradle.ext.sensorsInterfaceArchiveSuffix
-
-// Snapshot Artifact name
-ext.sensorsInterfaceSnapshotArtifactName = gradle.ext.flavorSnapshotPrefix + gradle.ext.sensorsInterfaceArchiveSuffix
 
 
 /**************************************************************************************************
                                           NAMES (apps)
  *************************************************************************************************/
 
+
 /* -- SERVICES -- */
 
 ext.servicesProjectChild = ':services_app'
-ext.servicesName = '.services'
+ext.servicesPackageName = 'services'
+ext.sevicesNamespace = ext.odkxGroupId + "." + ext.servicesPackageName
 
 /* -- SCAN -- */
 
 ext.scanProjectChild = ':scan_app'
-ext.scanName = '.scan'
+ext.scanPackageName = 'scan'
+ext.scanNamespace = ext.odkxGroupId + "." + ext.scanPackageName
 
 /* -- SURVEY -- */
 
 ext.surveyProjectChild = ':survey_app'
-ext.surveyName = '.survey'
+ext.surveyPackageName = 'survey'
+ext.suveyNamespace = ext.odkxGroupId + "." + ext.surveyPackageName
 
 /* -- TABLES -- */
 
 ext.tablesProjectChild = ':tables_app'
-ext.tablesName = '.tables'
+ext.tablesPackageName = 'tables'
+ext.tablesNamespace = ext.odkxGroupId + "." + ext.tablesPackageName
 
 /* -- SENSORS FRAMEWORK  -- */
 
 ext.sensorsFrameworkProjectChild = ':sensorsframework_app'
-ext.sensorsFrameworkName = '.sensors'
+ext.sensorsFrameworkPackageName = 'sensors'
+ext.sensorsFrameworkNamespace = ext.odkxGroupId + "." + ext.sensorsFrameworkPackageName
 
 /* -- SUBMIT  -- */
 
 ext.submitProjectChild = ':submit_app'
-ext.submitName = '.submit'
+ext.submitPackageName = 'tables'
+ext.submitNamespace = ext.odkxGroupId + "." + ext.submitPackageName
