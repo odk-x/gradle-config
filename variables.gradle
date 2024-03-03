@@ -188,7 +188,7 @@ ext.scanNamespace = ext.odkxGroupId + "." + ext.scanPackageName
 
 ext.surveyProjectChild = ':survey_app'
 ext.surveyPackageName = 'survey'
-ext.suveyNamespace = ext.odkxGroupId + "." + ext.surveyPackageName
+ext.surveyNamespace = ext.odkxGroupId + "." + ext.surveyPackageName
 
 /* -- TABLES -- */
 
