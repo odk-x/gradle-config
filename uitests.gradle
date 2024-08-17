@@ -13,22 +13,3 @@ task grantServicesWriteExternalStoragePermission(type: Exec) {
 
 }
 
-task setupUiTestsForPrimary {
-	mustRunAfter 'installPrimaryDebug'
-	dependsOn 'grantPermissionForODKXApp'
-}
-
-task setupUiTestsForSnaphot  {
-	mustRunAfter 'installSnapshotDebug'
-    dependsOn 'grantPermissionForODKXApp'
-}
-
-tasks.whenTaskAdded { task ->
-    if (task.name.startsWith('connected') && task.name.endsWith('DebugAndroidTest')) {
-        if(task.name.contentEquals("connectedPrimaryDebugAndroidTest")) {
-            task.dependsOn setupUiTestsForPrimary
-        } else if (task.name.contentEquals("connectedSnapshotDebugAndroidTest")) {
-            task.dependsOn setupUiTestsForSnaphot
-        }
-    }
-}
